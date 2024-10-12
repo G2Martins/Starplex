@@ -1,0 +1,140 @@
+.menu-bar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Remover 'fixed' para evitar que o fundo contorne os elementos */
+    top: 10px; 
+    width: 94%; 
+    margin: 0 auto; 
+    background-color: #1E1730; 
+    z-index: 2; /* Aumentar o z-index para garantir que os elementos fiquem sobre o fundo */
+    padding: 10px 50px;
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+.menu-bar__logo img {
+    z-index: 3; /* Certifique-se de que a logo esteja visível acima do fundo */
+}
+
+.menu-bar__item ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar__item ul li {
+    margin-right: 30px;
+    position: relative;
+}
+
+.menu-bar__item ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Segoe UI';
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.menu-bar__item ul li a.active::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #ec6d1c;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-bar__item ul li a:hover {
+    color: #ec6d1c;
+}
+
+.menu-bar__actions {
+    display: flex;
+    align-items: center;
+    z-index: 3; /* Para garantir que o ícone e avatar fiquem acima do fundo */
+}
+
+.menu-bar__actions a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.search-icon {
+    font-size: 24px;
+}
+
+.menu-bar__actions .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.login-link {
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI';
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, filter 0.3s;
+}
+
+.login-link:hover {
+    color: #ec6d1c;
+}
+
+.login-link:hover .avatar {
+    filter: brightness(0.8);
+}
+
+.login-link span {
+    font-size: 16px;
+    color: #fff;
+}
+
+.menu-bar__actions .login-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, filter 0.3s;
+}
+
+.menu-bar__actions .avatar {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.menu-bar__actions .login-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-bar__actions .login-text {
+    font-size: 16px;
+    color: #fff;
+}
+
+.menu-bar__actions .signup-text {
+    font-size: 14px;
+    color: #fff;
+}
+
+.menu-bar__actions .login-link:hover .login-text,
+.menu-bar__actions .login-link:hover .signup-text {
+    color: #ec6d1c;
+}
+
+.menu-bar__actions .login-link:hover .avatar {
+    filter: brightness(0.8);
+}
