@@ -1,0 +1,45 @@
+.card__container {
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 10px;
+    background-color: #130f1d; /* Cor de fundo do container geral */
+  }
+  
+  .card__img {
+    width: 100%;
+    height: 400px; /* Mantém a altura da imagem como antes */
+    transition: transform 0.8s;
+  }
+  
+  .card__img:hover {
+    transform: scale(1.1);
+  }
+  
+  .card__details {
+    padding: 10px;
+    color: white;
+    text-align: left;
+    background-color: #1d1b29; /* Fundo escuro para o texto */
+  }
+  
+  .card__title {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .card__genre-type {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 5px;
+  }
+  
+  .card__info {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ec6d1c; /* Cor de destaque */
+  }
+  

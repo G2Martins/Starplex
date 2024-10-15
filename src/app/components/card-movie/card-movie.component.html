@@ -1,0 +1,18 @@
+<a href="#" class="card__container">
+    <img
+        class="card__img"
+        [src]=[movieCover]
+        alt="Game Cover"
+    >
+    
+    <div class="card__details">
+        <h3 class="card__title">{{ movieTitle }}</h3>
+
+        <p class="card__genre-type">{{ movieGenre }} • {{ movieType }}</p>
+        
+        <p class="card__info">
+          {{ movieDuration ? movieDuration : movieDate }}
+        </p>
+
+      </div>
+</a>

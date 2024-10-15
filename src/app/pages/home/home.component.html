@@ -1,0 +1,110 @@
+<div class="container__home">
+    
+    <!-- Now Showing Section -->
+    <div class="home__now-Showing">
+        <div class="now-showing-header">
+            <h2>NOW SHOWING</h2>
+            <button class="see-all-btn">See All</button>
+        </div>
+
+        <div class="now-showing-movies">
+            <app-card-movie
+                movieCover="assets/images/Coringa2Cover.jpg"
+                movieTitle="Coringa: Delírio A Dois"
+                movieGenre="Drama"
+                movieType="Suspense"
+                movieDuration="130 mins"
+            >
+            </app-card-movie>
+
+            <app-card-movie
+                movieCover="assets/images/AssimQueAcabaCover.jpg"
+                movieTitle="É Assim Que Acaba"
+                movieGenre="Drama"
+                movieType="Romance"
+                movieDuration="126 mins"
+            >
+            </app-card-movie>
+            
+            <app-card-movie
+                movieCover="assets/images/TransformersCover.jfif"
+                movieTitle="Transformers: O Início"
+                movieGenre="Action"
+                movieType="Animation"
+                movieDuration="100 mins"
+            >
+            </app-card-movie>
+            
+            <app-card-movie
+                movieCover="assets/images/FantasmasAindaSeDivertem.jpg"
+                movieTitle="Os Fantasmas Ainda Se Divertem"
+                movieGenre="Comedy"
+                movieType="Fantasy"
+                movieDuration="98 mins"
+            >
+            </app-card-movie>
+            
+            <app-card-movie
+                movieCover="assets/images/MeuMalvadoFavorito4Cover.jpg"
+                movieTitle="Meu Malvado Favorito 4"
+                movieGenre="Action"
+                movieType="Animation"
+                movieDuration="96 mins"
+            >
+            </app-card-movie>
+            
+            <app-card-movie
+                movieCover="assets/images/Sorria2Cover.jfif"
+                movieTitle="Sorria 2"
+                movieGenre="Terror"
+                movieType="Action"
+                movieDuration="100 mins"
+            >
+            </app-card-movie>
+            
+            <app-card-movie
+                movieCover="assets/images/DeadpoolEWolverineCover.jpg"
+                movieTitle="Deadpool & Wolverine"
+                movieGenre="Action"
+                movieType="Adventure"
+                movieDuration="128 mins"
+            >
+            </app-card-movie>
+            
+            <app-card-movie
+                movieCover="assets/images/ASubstanciaCover.png"
+                movieTitle="A Substância"
+                movieGenre="Drama"
+                movieType="Terror"
+                movieDuration="132 mins"
+            >
+            </app-card-movie>
+        </div>
+    </div>
+
+    <div class="home__coming-soon">
+        <div class="coming-soon-header">
+          <h2>COMING SOON</h2>
+          <button class="see-all-btn">See All</button>
+        </div>
+      
+        <div class="carousel-container">
+          <!-- Botão para retroceder -->
+          <button (click)="prevSlide()" class="carousel-nav prev">❮</button>
+      
+          <!-- Exibição de um único filme -->
+          <div class="carousel-slide">
+            <div class="carousel-item">
+              <img [src]="visibleMovie.movieCover" alt="{{ visibleMovie.movieTitle }}">
+              <h4>{{ visibleMovie.movieTitle }}</h4>
+              <p>{{ visibleMovie.movieGenre }} • {{ visibleMovie.movieType }}</p>
+              <p>{{ visibleMovie.movieDate }}</p>
+            </div>
+          </div>
+      
+          <!-- Botão para avançar -->
+          <button (click)="nextSlide()" class="carousel-nav next">❯</button>
+        </div>
+      </div>
+    
+</div>

@@ -1,0 +1,125 @@
+.container__home {
+    width: 80%; /* Ajustado para ocupar 80% da largura */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #130f1d; /* Cor de fundo escura */
+    border-radius: 8px;
+}
+
+.home__now-Showing {
+    margin: 20px 0;
+}
+
+.now-showing-header, .coming-soon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.now-showing-header h2 {
+    color: white; /* Cor do texto do título */
+    font-size: 24px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.see-all-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ec6d1c; /* Cor laranja */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.see-all-btn:hover {
+    background-color: #ec6d1c; /* Mantém o laranja ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de levantar o botão */
+}
+
+.see-all-btn:active {
+    transform: translateY(1px); /* Efeito de pressionar o botão */
+}
+
+.now-showing-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px; /* Diminuído o espaço entre os cards */
+    justify-content: space-between;
+}
+
+.now-showing-movies app-card-movie {
+    flex: 0 0 calc(25% - 10px); /* Aproximando mais os filmes */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Reduzindo o espaço entre as linhas */
+}
+
+@media (max-width: 1024px) {
+    .now-showing-movies app-card-movie {
+        flex: 0 0 calc(33.33% - 10px); /* 3 filmes por linha em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .now-showing-movies app-card-movie {
+        flex: 0 0 calc(50% - 10px); /* 2 filmes por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .now-showing-movies app-card-movie {
+        flex: 0 0 100%; /* 1 filme por linha em telas muito pequenas */
+    }
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    width: 500px;
+    height: 700px;
+    object-fit: cover; /* Para garantir que a imagem preencha o espaço sem distorção */
+  }
+  
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
