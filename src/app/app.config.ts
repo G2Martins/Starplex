@@ -1,7 +1,8 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideClientHydration, withEventReplay, withIncrementalHydration } from '@angular/platform-browser';
-import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
+import { UrlSerializer, provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
+import { TrailingSlashSerializer } from './shared/trailing-slash';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     ),
     // Below-the-fold @defer blocks stay dehydrated (no JS work) until scrolled into view.
     provideClientHydration(withEventReplay(), withIncrementalHydration()),
+    { provide: UrlSerializer, useClass: TrailingSlashSerializer },
   ],
 };

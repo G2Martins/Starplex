@@ -73,3 +73,4 @@ npm run build:pages  # build + copia dist pra docs/ (+ .nojekyll, 404.html, inde
 - **`sharp` segura o arquivo de entrada aberto** (EBUSY ao apagar no Windows): ler para `Buffer` e usar `sharp.cache(false)`.
 - **Nomes do elenco em outra escrita** (hangul, devanágari): o fetch troca pelo alias latino de `/person/{id}` ou descarta.
 - **Deploy do Pages falha com "try again later":** instabilidade do GitHub; `gh run rerun <id> --failed`.
+- **Links internos sempre com barra no fim** (`/filmes/x/`): o GitHub Pages responde `/x` com 301. O `TrailingSlashSerializer` (`src/app/shared/trailing-slash.ts`, registrado em `app.config.ts`) cuida disso no router.
