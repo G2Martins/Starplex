@@ -1,0 +1,231 @@
+{
+  "source": "fixture",
+  "updatedAt": "2026-11-09",
+  "movies": [
+    {
+      "id": 533535, "slug": "deadpool-wolverine", "title": "Deadpool & Wolverine", "originalTitle": "Deadpool & Wolverine",
+      "overview": "Wade Wilson leva uma vida pacata longe do uniforme até que a Autoridade de Variância Temporal o recruta para uma missão que pode apagar o seu universo. Para salvar quem ama, ele precisa convencer uma versão relutante de Wolverine a entrar numa aventura caótica pelo multiverso.",
+      "posterPath": "deadpool-wolverine", "backdropPath": "deadpool-wolverine", "runtime": 128,
+      "genres": ["Ação", "Comédia", "Ficção científica"], "certification": "18", "releaseDate": "2024-07-25", "voteAverage": 7.6,
+      "cast": [
+        { "name": "Ryan Reynolds", "character": "Wade Wilson / Deadpool", "profilePath": null },
+        { "name": "Hugh Jackman", "character": "Logan / Wolverine", "profilePath": null },
+        { "name": "Emma Corrin", "character": "Cassandra Nova", "profilePath": null },
+        { "name": "Matthew Macfadyen", "character": "Paradox", "profilePath": null },
+        { "name": "Dafne Keen", "character": "Laura / X-23", "profilePath": null },
+        { "name": "Jennifer Garner", "character": "Elektra", "profilePath": null }
+      ],
+      "director": "Shawn Levy", "trailerYouTubeKey": "73_1biulkYk", "status": "now"
+    },
+    {
+      "id": 402431, "slug": "wicked", "title": "Wicked", "originalTitle": "Wicked",
+      "overview": "Muito antes de Dorothy chegar a Oz, Elphaba, uma jovem incompreendida por causa da pele verde, e Glinda, a garota mais popular da escola, se conhecem na Universidade Shiz. Uma amizade improvável entre as duas muda o destino de toda a Terra de Oz.",
+      "posterPath": "wicked", "backdropPath": "wicked", "runtime": 160,
+      "genres": ["Drama", "Romance", "Fantasia"], "certification": "10", "releaseDate": "2024-11-21", "voteAverage": 7.2,
+      "cast": [
+        { "name": "Cynthia Erivo", "character": "Elphaba", "profilePath": null },
+        { "name": "Ariana Grande", "character": "Glinda", "profilePath": null },
+        { "name": "Jonathan Bailey", "character": "Fiyero", "profilePath": null },
+        { "name": "Michelle Yeoh", "character": "Madame Morrible", "profilePath": null },
+        { "name": "Jeff Goldblum", "character": "O Mágico de Oz", "profilePath": null },
+        { "name": "Ethan Slater", "character": "Boq", "profilePath": null }
+      ],
+      "director": "Jon M. Chu", "trailerYouTubeKey": "6COmYeLsz4c", "status": "now"
+    },
+    {
+      "id": 1241982, "slug": "moana-2", "title": "Moana 2", "originalTitle": "Moana 2",
+      "overview": "Três anos depois da primeira jornada, Moana recebe um chamado inesperado de seus ancestrais. Ao lado de Maui e de uma nova tripulação, ela parte para os mares distantes da Oceania rumo a águas perigosas e esquecidas há muito tempo.",
+      "posterPath": "moana-2", "backdropPath": "moana-2", "runtime": 100,
+      "genres": ["Animação", "Aventura", "Família", "Comédia"], "certification": "L", "releaseDate": "2024-11-28", "voteAverage": 7.0,
+      "cast": [
+        { "name": "Auli'i Cravalho", "character": "Moana (voz)", "profilePath": null },
+        { "name": "Dwayne Johnson", "character": "Maui (voz)", "profilePath": null },
+        { "name": "Hualālai Chung", "character": "Moni (voz)", "profilePath": null },
+        { "name": "Rose Matafeo", "character": "Loto (voz)", "profilePath": null },
+        { "name": "David Fane", "character": "Kele (voz)", "profilePath": null },
+        { "name": "Awhimai Fraser", "character": "Matangi (voz)", "profilePath": null }
+      ],
+      "director": "David G. Derrick Jr.", "trailerYouTubeKey": "hDZ7y8RP5HE", "status": "now"
+    },
+    {
+      "id": 889737, "slug": "coringa-delirio-a-dois", "title": "Coringa: Delírio a Dois", "originalTitle": "Joker: Folie à Deux",
+      "overview": "Internado no Hospital Estadual de Arkham à espera do julgamento, Arthur Fleck ainda tenta entender quem é de verdade. Lá dentro ele encontra Lee Quinzel, uma paixão que desperta a música que sempre carregou e o empurra de volta para o personagem que Gotham não esqueceu.",
+      "posterPath": "coringa-delirio-a-dois", "backdropPath": "coringa-delirio-a-dois", "runtime": 138,
+      "genres": ["Drama", "Crime", "Thriller"], "certification": "16", "releaseDate": "2024-10-03", "voteAverage": 5.6,
+      "cast": [
+        { "name": "Joaquin Phoenix", "character": "Arthur Fleck / Coringa", "profilePath": null },
+        { "name": "Lady Gaga", "character": "Lee Quinzel", "profilePath": null },
+        { "name": "Brendan Gleeson", "character": "Jackie Sullivan", "profilePath": null },
+        { "name": "Catherine Keener", "character": "Maryanne Stewart", "profilePath": null },
+        { "name": "Zazie Beetz", "character": "Sophie Dumond", "profilePath": null },
+        { "name": "Steve Coogan", "character": "Paddy Meyers", "profilePath": null }
+      ],
+      "director": "Todd Phillips", "trailerYouTubeKey": "_OKAwz2MsJs", "status": "now"
+    },
+    {
+      "id": 912649, "slug": "venom-a-ultima-rodada", "title": "Venom: A Última Rodada", "originalTitle": "Venom: The Last Dance",
+      "overview": "Caçados pelos dois mundos, Eddie Brock e Venom estão em fuga. Com o cerco se fechando, a dupla precisa tomar uma decisão devastadora que pode encerrar de vez a última dança entre o jornalista e o simbionte.",
+      "posterPath": "venom-a-ultima-rodada", "backdropPath": "venom-a-ultima-rodada", "runtime": 109,
+      "genres": ["Ação", "Ficção científica", "Aventura"], "certification": "14", "releaseDate": "2024-10-24", "voteAverage": 6.8,
+      "cast": [
+        { "name": "Tom Hardy", "character": "Eddie Brock / Venom", "profilePath": null },
+        { "name": "Chiwetel Ejiofor", "character": "Rex Strickland", "profilePath": null },
+        { "name": "Juno Temple", "character": "Dra. Teddy Payne", "profilePath": null },
+        { "name": "Rhys Ifans", "character": "Martin Moon", "profilePath": null },
+        { "name": "Peggy Lu", "character": "Sra. Chen", "profilePath": null },
+        { "name": "Stephen Graham", "character": "Patrick Mulligan", "profilePath": null }
+      ],
+      "director": "Kelly Marcel", "trailerYouTubeKey": "__2bjWbetsA", "status": "now"
+    },
+    {
+      "id": 519182, "slug": "meu-malvado-favorito-4", "title": "Meu Malvado Favorito 4", "originalTitle": "Despicable Me 4",
+      "overview": "Gru, Lucy e as meninas ganham um novo integrante na família: Gru Jr., um bebê que vive para atormentar o pai. Quando um antigo inimigo escapa da prisão em busca de vingança, a família é obrigada a fugir e recomeçar a vida com identidades secretas.",
+      "posterPath": "meu-malvado-favorito-4", "backdropPath": "meu-malvado-favorito-4", "runtime": 94,
+      "genres": ["Animação", "Família", "Comédia", "Ação"], "certification": "L", "releaseDate": "2024-07-04", "voteAverage": 7.1,
+      "cast": [
+        { "name": "Steve Carell", "character": "Gru (voz)", "profilePath": null },
+        { "name": "Kristen Wiig", "character": "Lucy (voz)", "profilePath": null },
+        { "name": "Pierre Coffin", "character": "Minions (voz)", "profilePath": null },
+        { "name": "Will Ferrell", "character": "Maxime Le Mal (voz)", "profilePath": null },
+        { "name": "Joey King", "character": "Poppy (voz)", "profilePath": null },
+        { "name": "Sofía Vergara", "character": "Valentina (voz)", "profilePath": null }
+      ],
+      "director": "Chris Renaud", "trailerYouTubeKey": "qQlr9-rF32A", "status": "now"
+    },
+    {
+      "id": 698687, "slug": "transformers-o-inicio", "title": "Transformers: O Início", "originalTitle": "Transformers One",
+      "overview": "Antes de se tornarem inimigos jurados, Orion Pax e D-16 eram irmãos de armas em Cybertron. A história ainda não contada de como dois operários comuns se transformaram em Optimus Prime e Megatron.",
+      "posterPath": "transformers-o-inicio", "backdropPath": "transformers-o-inicio", "runtime": 104,
+      "genres": ["Animação", "Ação", "Ficção científica", "Aventura"], "certification": "10", "releaseDate": "2024-09-19", "voteAverage": 8.1,
+      "cast": [
+        { "name": "Chris Hemsworth", "character": "Orion Pax (voz)", "profilePath": null },
+        { "name": "Brian Tyree Henry", "character": "D-16 (voz)", "profilePath": null },
+        { "name": "Scarlett Johansson", "character": "Elita-1 (voz)", "profilePath": null },
+        { "name": "Keegan-Michael Key", "character": "B-127 (voz)", "profilePath": null },
+        { "name": "Steve Buscemi", "character": "Starscream (voz)", "profilePath": null },
+        { "name": "Laurence Fishburne", "character": "Alpha Trion (voz)", "profilePath": null }
+      ],
+      "director": "Josh Cooley", "trailerYouTubeKey": null, "status": "now"
+    },
+    {
+      "id": 1100782, "slug": "sorria-2", "title": "Sorria 2", "originalTitle": "Smile 2",
+      "overview": "Prestes a começar uma nova turnê mundial, a estrela pop Skye Riley passa a viver acontecimentos cada vez mais aterrorizantes e inexplicáveis. Pressionada pela fama, ela precisa encarar o próprio passado antes que perca o controle de vez.",
+      "posterPath": "sorria-2", "backdropPath": "sorria-2", "runtime": 127,
+      "genres": ["Terror", "Mistério"], "certification": "18", "releaseDate": "2024-10-17", "voteAverage": 6.7,
+      "cast": [
+        { "name": "Naomi Scott", "character": "Skye Riley", "profilePath": null },
+        { "name": "Rosemarie DeWitt", "character": "Elizabeth Riley", "profilePath": null },
+        { "name": "Lukas Gage", "character": "Lewis Fregoli", "profilePath": null },
+        { "name": "Miles Gutierrez-Riley", "character": "Joshua", "profilePath": null },
+        { "name": "Peter Jacobson", "character": "Morris", "profilePath": null },
+        { "name": "Ray Nicholson", "character": "Paul Hudson", "profilePath": null }
+      ],
+      "director": "Parker Finn", "trailerYouTubeKey": "0HY6QFlBzUY", "status": "now"
+    },
+    {
+      "id": 933260, "slug": "a-substancia", "title": "A Substância", "originalTitle": "The Substance",
+      "overview": "Elisabeth Sparkle, estrela decadente de um programa de ginástica, recebe a oferta de uma substância misteriosa que promete gerar uma versão mais jovem e perfeita de si mesma. Existe apenas uma regra: dividir o tempo. E nada sai como o planejado.",
+      "posterPath": "a-substancia", "backdropPath": "a-substancia", "runtime": 141,
+      "genres": ["Terror", "Ficção científica", "Drama"], "certification": "18", "releaseDate": "2024-09-19", "voteAverage": 7.1,
+      "cast": [
+        { "name": "Demi Moore", "character": "Elisabeth Sparkle", "profilePath": null },
+        { "name": "Margaret Qualley", "character": "Sue", "profilePath": null },
+        { "name": "Dennis Quaid", "character": "Harvey", "profilePath": null },
+        { "name": "Edward Hamilton-Clark", "character": "Fred", "profilePath": null },
+        { "name": "Gore Abrams", "character": "Oliver", "profilePath": null },
+        { "name": "Oscar Lesage", "character": "Troy", "profilePath": null }
+      ],
+      "director": "Coralie Fargeat", "trailerYouTubeKey": "LNlrGhBpYjc", "status": "now"
+    },
+    {
+      "id": 1079091, "slug": "e-assim-que-acaba", "title": "É Assim que Acaba", "originalTitle": "It Ends with Us",
+      "overview": "Lily Bloom deixa a cidade natal para abrir uma floricultura em Boston e se apaixona pelo neurocirurgião Ryle Kincaid. Quando Atlas, seu primeiro amor, reaparece, ela é obrigada a encarar escolhas difíceis sobre o relacionamento e o próprio futuro.",
+      "posterPath": "e-assim-que-acaba", "backdropPath": "e-assim-que-acaba", "runtime": 130,
+      "genres": ["Romance", "Drama"], "certification": "14", "releaseDate": "2024-08-08", "voteAverage": 6.9,
+      "cast": [
+        { "name": "Blake Lively", "character": "Lily Bloom", "profilePath": null },
+        { "name": "Justin Baldoni", "character": "Ryle Kincaid", "profilePath": null },
+        { "name": "Brandon Sklenar", "character": "Atlas Corrigan", "profilePath": null },
+        { "name": "Jenny Slate", "character": "Allysa", "profilePath": null },
+        { "name": "Hasan Minhaj", "character": "Marshall", "profilePath": null },
+        { "name": "Amy Morton", "character": "Jenny Bloom", "profilePath": null }
+      ],
+      "director": "Justin Baldoni", "trailerYouTubeKey": "DLET_u31M4M", "status": "now"
+    },
+    {
+      "id": 917496, "slug": "os-fantasmas-ainda-se-divertem-beetlejuice-beetlejuice", "title": "Os Fantasmas Ainda se Divertem: Beetlejuice Beetlejuice", "originalTitle": "Beetlejuice Beetlejuice",
+      "overview": "Depois de uma tragédia inesperada, três gerações da família Deetz voltam para a casa em Winter River. A vida de Lydia vira de cabeça para baixo quando a filha rebelde, Astrid, abre sem querer o portal para o além. Basta alguém dizer o nome três vezes.",
+      "posterPath": "os-fantasmas-ainda-se-divertem-beetlejuice-beetlejuice", "backdropPath": "os-fantasmas-ainda-se-divertem-beetlejuice-beetlejuice", "runtime": 105,
+      "genres": ["Comédia", "Fantasia", "Terror"], "certification": "14", "releaseDate": "2024-09-05", "voteAverage": 7.0,
+      "cast": [
+        { "name": "Michael Keaton", "character": "Beetlejuice", "profilePath": null },
+        { "name": "Winona Ryder", "character": "Lydia Deetz", "profilePath": null },
+        { "name": "Catherine O'Hara", "character": "Delia Deetz", "profilePath": null },
+        { "name": "Jenna Ortega", "character": "Astrid Deetz", "profilePath": null },
+        { "name": "Justin Theroux", "character": "Rory", "profilePath": null },
+        { "name": "Monica Bellucci", "character": "Delores", "profilePath": null }
+      ],
+      "director": "Tim Burton", "trailerYouTubeKey": "CoZqL9N6Rx4", "status": "now"
+    },
+    {
+      "id": 762509, "slug": "mufasa-o-rei-leao", "title": "Mufasa: O Rei Leão", "originalTitle": "Mufasa: The Lion King",
+      "overview": "Rafiki conta à jovem Kiara a lenda de Mufasa, um filhote órfão perdido e sozinho até encontrar Taka, herdeiro de uma linhagem real. O encontro dá início a uma grande jornada que vai revelar como nasceu um dos maiores reis da Pedra do Reino.",
+      "posterPath": "mufasa-o-rei-leao", "backdropPath": "mufasa-o-rei-leao", "runtime": 118,
+      "genres": ["Aventura", "Família", "Animação", "Drama"], "certification": "L", "releaseDate": "2024-12-19", "voteAverage": 7.4,
+      "cast": [
+        { "name": "Aaron Pierre", "character": "Mufasa (voz)", "profilePath": null },
+        { "name": "Kelvin Harrison Jr.", "character": "Taka (voz)", "profilePath": null },
+        { "name": "Tiffany Boone", "character": "Sarabi (voz)", "profilePath": null },
+        { "name": "Kagiso Lediga", "character": "Rafiki jovem (voz)", "profilePath": null },
+        { "name": "Preston Nyman", "character": "Zazu (voz)", "profilePath": null },
+        { "name": "Mads Mikkelsen", "character": "Kiros (voz)", "profilePath": null }
+      ],
+      "director": "Barry Jenkins", "trailerYouTubeKey": "o17MF9vnabg", "status": "soon"
+    },
+    {
+      "id": 939243, "slug": "sonic-3-o-filme", "title": "Sonic 3: O Filme", "originalTitle": "Sonic the Hedgehog 3",
+      "overview": "Sonic, Knuckles e Tails se reúnem para enfrentar um adversário poderoso e misterioso: Shadow, um ouriço com habilidades que ninguém nunca viu. Superados em todos os sentidos, eles precisam buscar uma aliança improvável para tentar detê-lo.",
+      "posterPath": "sonic-3-o-filme", "backdropPath": "sonic-3-o-filme", "runtime": 110,
+      "genres": ["Ação", "Ficção científica", "Comédia", "Família"], "certification": "L", "releaseDate": "2024-12-26", "voteAverage": 7.7,
+      "cast": [
+        { "name": "Ben Schwartz", "character": "Sonic (voz)", "profilePath": null },
+        { "name": "Jim Carrey", "character": "Dr. Robotnik / Gerald Robotnik", "profilePath": null },
+        { "name": "Keanu Reeves", "character": "Shadow (voz)", "profilePath": null },
+        { "name": "Idris Elba", "character": "Knuckles (voz)", "profilePath": null },
+        { "name": "Colleen O'Shaughnessey", "character": "Tails (voz)", "profilePath": null },
+        { "name": "James Marsden", "character": "Tom Wachowski", "profilePath": null }
+      ],
+      "director": "Jeff Fowler", "trailerYouTubeKey": "qSu6i2iFMO0", "status": "soon"
+    },
+    {
+      "id": 539972, "slug": "kraven-o-cacador", "title": "Kraven: O Caçador", "originalTitle": "Kraven the Hunter",
+      "overview": "A complexa relação de Sergei Kravinoff com o pai, um mafioso implacável, o leva a uma jornada de vingança com consequências brutais. É assim que nasce Kraven, o maior caçador do mundo e um dos vilões mais temidos do universo Marvel.",
+      "posterPath": "kraven-o-cacador", "backdropPath": "kraven-o-cacador", "runtime": 127,
+      "genres": ["Ação", "Aventura", "Thriller"], "certification": "16", "releaseDate": "2024-12-12", "voteAverage": 6.6,
+      "cast": [
+        { "name": "Aaron Taylor-Johnson", "character": "Sergei Kravinoff / Kraven", "profilePath": null },
+        { "name": "Ariana DeBose", "character": "Calypso", "profilePath": null },
+        { "name": "Fred Hechinger", "character": "Dmitri Kravinoff", "profilePath": null },
+        { "name": "Alessandro Nivola", "character": "Aleksei Sytsevich", "profilePath": null },
+        { "name": "Christopher Abbott", "character": "O Estrangeiro", "profilePath": null },
+        { "name": "Russell Crowe", "character": "Nikolai Kravinoff", "profilePath": null }
+      ],
+      "director": "J. C. Chandor", "trailerYouTubeKey": "rze8QYwWGMs", "status": "soon"
+    },
+    {
+      "id": 839033, "slug": "o-senhor-dos-aneis-a-guerra-dos-rohirrim", "title": "O Senhor dos Anéis: A Guerra dos Rohirrim", "originalTitle": "The Lord of the Rings: The War of the Rohirrim",
+      "overview": "Duzentos anos antes dos acontecimentos de O Senhor dos Anéis, um ataque repentino obriga Helm Mão-de-Martelo, o lendário rei de Rohan, e seu povo a resistir na antiga fortaleza de Hornburg, que mais tarde seria conhecida como o Abismo de Helm.",
+      "posterPath": "o-senhor-dos-aneis-a-guerra-dos-rohirrim", "backdropPath": "o-senhor-dos-aneis-a-guerra-dos-rohirrim", "runtime": 134,
+      "genres": ["Animação", "Fantasia", "Ação", "Aventura"], "certification": "12", "releaseDate": "2024-12-12", "voteAverage": 6.6,
+      "cast": [
+        { "name": "Brian Cox", "character": "Helm Mão-de-Martelo (voz)", "profilePath": null },
+        { "name": "Gaia Wise", "character": "Héra (voz)", "profilePath": null },
+        { "name": "Luke Pasqualino", "character": "Wulf (voz)", "profilePath": null },
+        { "name": "Miranda Otto", "character": "Éowyn (voz)", "profilePath": null },
+        { "name": "Lorraine Ashbourne", "character": "Olwyn (voz)", "profilePath": null },
+        { "name": "Shaun Dooley", "character": "Freca (voz)", "profilePath": null }
+      ],
+      "director": "Kenji Kamiyama", "trailerYouTubeKey": null, "status": "soon"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+@if (movie(); as m) {
+  <!-- ============ HEADER ============ -->
+  <section class="relative isolate overflow-hidden border-b border-line" aria-labelledby="film-title">
+    @if (backdrop(m); as b) {
+      <img class="absolute inset-0 -z-20 h-full w-full object-cover object-[50%_25%] opacity-60" [src]="b.src" [attr.srcset]="b.set" sizes="100vw"
+           alt="" width="1280" height="720" fetchpriority="high" decoding="async" />
+    }
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-paper via-paper/80 to-paper/40"></div>
+    <div class="beam pointer-events-none absolute inset-x-0 top-0 -z-10 h-[140%] opacity-70" aria-hidden="true"></div>
+
+    <div class="wrap grid gap-8 pb-12 pt-10 sm:grid-cols-[200px_minmax(0,1fr)] sm:items-end sm:gap-10 sm:pt-16 lg:grid-cols-[260px_minmax(0,1fr)] lg:pb-16">
+      <nav class="sm:col-span-2" aria-label="Trilha">
+        <ol class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-2">
+          <li><a class="hover:text-ink" routerLink="/">Filmes</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="truncate text-ink" aria-current="page">{{ m.title }}</li>
+        </ol>
+      </nav>
+      <div class="ticks mx-auto w-44 sm:w-full">
+        <div class="card overflow-hidden !rounded-[11px]">
+          <app-poster [movie]="m" [eager]="true" sizes="(min-width: 1024px) 260px, (min-width: 640px) 200px, 176px" />
+        </div>
+      </div>
+      <div class="min-w-0">
+        <p class="eyebrow materialize">{{ m.status === 'now' ? 'Em cartaz' : 'Em breve' }} · {{ m.genres.slice(0, 3).join(' · ') }}</p>
+        <h1 id="film-title" class="h-display mt-4 text-[2.4rem] sm:text-5xl lg:text-[4rem]"><span class="mask"><span class="rise">{{ m.title }}</span></span></h1>
+        @if (m.originalTitle !== m.title) {
+          <p class="materialize mt-3 font-mono text-[12px] uppercase tracking-[0.12em] text-ink-2" style="animation-delay: 100ms">{{ m.originalTitle }}</p>
+        }
+        <div class="materialize mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-[14px] text-ink-2" style="animation-delay: 160ms">
+          <span class="inline-flex items-center gap-2"><app-cert [value]="m.certification" />{{ certShort(m.certification) }}</span>
+          <span class="inline-flex items-center gap-1.5"><app-icon name="clock" [size]="15" />{{ runtime(m.runtime) }}</span>
+          <span class="inline-flex items-center gap-1.5"><app-icon name="calendar" [size]="15" />Estreia {{ release(m) }}</span>
+          @if (showRating && m.voteAverage) {
+            <span class="inline-flex items-center gap-1.5"><app-icon name="star" [size]="15" class="text-accent-ink" />{{ m.voteAverage.toFixed(1) }} no TMDB</span>
+          }
+        </div>
+        <div class="materialize mt-8 flex flex-wrap gap-3" style="animation-delay: 240ms">
+          @if (m.status === 'now') {
+            <a class="btn btn-primary" [routerLink]="[]" fragment="sessoes"><app-icon name="ticket" [size]="18" />Ver sessões</a>
+          }
+          @if (m.trailerYouTubeKey) {
+            <a class="btn btn-glass" [routerLink]="[]" fragment="trailer"><app-icon name="play" [size]="16" />Trailer</a>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SESSÕES ============ -->
+  @if (m.status === 'now') {
+    <section id="sessoes" class="wrap pt-16" aria-labelledby="t-sessoes">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">Ingressos</p>
+          <h2 id="t-sessoes" class="h2 mt-3 text-3xl sm:text-4xl">Sessões</h2>
+        </div>
+        <label class="w-full sm:w-auto">
+          <span class="sr-only">Cinema</span>
+          <select class="field w-full" (change)="pickCinema($event)">
+            <option value="" [selected]="!store.cinema()">Todos os cinemas</option>
+            @for (c of cinemas; track c.id) { <option [value]="c.id" [selected]="c.id === store.cinema()">{{ c.name }}</option> }
+          </select>
+        </label>
+      </div>
+
+      @if (today()) {
+        <div class="no-bar -mx-4 mt-8 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0" role="group" aria-label="Data da sessão">
+          @for (d of days(); track d; let i = $index) {
+            @let l = dayLabel(d, i);
+            <button type="button" class="flex w-[4.6rem] shrink-0 flex-col items-center rounded-[12px] border px-2 py-2.5 transition-colors"
+                    [class]="day() === d ? 'border-accent bg-chip text-ink' : 'border-line bg-surface text-ink-2 hover:text-ink'"
+                    [attr.aria-pressed]="day() === d" [attr.title]="pretty(d)" (click)="day.set(d)">
+              <span class="font-mono text-[10px] uppercase tracking-[0.12em]">{{ l.top }}</span>
+              <span class="mt-1 text-2xl font-light leading-none tracking-tight">{{ l.num }}</span>
+              <span class="mt-1 font-mono text-[10px] uppercase tracking-[0.12em]">{{ l.month }}</span>
+            </button>
+          }
+        </div>
+        <div class="no-bar -mx-4 mt-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:px-0" role="group" aria-label="Formato">
+          <button type="button" class="pill" [attr.aria-pressed]="!format()" (click)="format.set('')">Todos</button>
+          @for (f of formats(); track f) {
+            <button type="button" class="pill font-mono" [attr.aria-pressed]="format() === f" (click)="format.set(f)">{{ f }}</button>
+          }
+        </div>
+
+        <div class="mt-8 grid gap-6">
+          @for (g of groups(); track g.cinema.id) {
+            <article class="panel overflow-hidden" [reveal]="$index * 60">
+              <header class="flex flex-wrap items-baseline justify-between gap-2 border-b border-line bg-well/60 px-5 py-4">
+                <h3 class="text-[16px] font-medium tracking-tight">{{ g.cinema.name }}</h3>
+                <p class="flex items-center gap-1.5 text-[13px] text-ink-2"><app-icon name="pin" [size]="14" />{{ g.cinema.address }}</p>
+              </header>
+              <div class="divide-y divide-line">
+                @for (r of g.rows; track r.label) {
+                  <div class="grid gap-3 px-5 py-4 sm:grid-cols-[11rem_1fr] sm:items-center">
+                    <p class="mono-label !text-[11px]">
+                      <span class="mr-1.5 inline-block rounded-[5px] bg-chip px-1.5 py-0.5 text-accent-ink">{{ r.format }}</span>{{ r.label.split(' · ')[1] }}
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      @for (s of r.sessions; track s.id) {
+                        <a class="group inline-flex min-h-11 flex-col items-center justify-center rounded-[10px] border border-line bg-surface px-3.5 py-1.5 transition-colors hover:border-accent hover:bg-chip"
+                           [routerLink]="['/sessao', s.id]" [attr.aria-label]="'Sessão das ' + s.time + ', ' + r.label + ', sala ' + s.room.no + ', ' + g.cinema.name">
+                          <span class="font-mono text-[15px] font-medium tracking-tight text-ink">{{ s.time }}</span>
+                          <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-2">Sala {{ s.room.no }}</span>
+                        </a>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </article>
+          } @empty {
+            <div class="rounded-[13px] border border-dashed border-line p-8 text-center">
+              <p>Nenhuma sessão disponível com esses filtros.</p>
+              <p class="mt-1 text-[14px] text-ink-2">Tente outra data, outro formato ou todos os cinemas.</p>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="mt-8 grid gap-3" aria-busy="true">
+          <p class="text-[14px] text-ink-2">Carregando os horários dos próximos 7 dias.</p>
+          <div class="h-20 rounded-[12px] bg-surface"></div>
+          <div class="h-40 rounded-[13px] bg-surface"></div>
+        </div>
+      }
+    </section>
+  } @else {
+    <section id="sessoes" class="wrap pt-16">
+      <div class="card card-accent dotgrid p-8 sm:p-10">
+        <p class="eyebrow">Pré-venda</p>
+        <h2 class="h2 mt-3 text-3xl sm:text-4xl">Estreia em {{ release(m) }}</h2>
+        <p class="mt-3 max-w-lg text-ink-2">As sessões abrem na semana de estreia. Enquanto isso, veja o que já está em cartaz.</p>
+        <a class="btn btn-line mt-6" routerLink="/" fragment="em-cartaz">Filmes em cartaz<app-icon name="arrow-right" [size]="16" /></a>
+      </div>
+    </section>
+  }
+
+  <!-- ============ SOBRE ============ -->
+  <section class="wrap grid grid-cols-1 gap-12 pt-20 lg:grid-cols-[minmax(0,1fr)_20rem]" aria-labelledby="t-sinopse">
+    <div class="min-w-0">
+      <p class="eyebrow">Sinopse</p>
+      <h2 id="t-sinopse" class="sr-only">Sinopse</h2>
+      <p class="mt-4 max-w-2xl text-[17px] leading-relaxed text-ink">{{ m.overview }}</p>
+
+      @if (m.trailerYouTubeKey) {
+        <div id="trailer" class="mt-14 scroll-mt-28">
+          <p class="eyebrow">Trailer</p>
+          <div class="ticks mt-6"><app-trailer class="card" [key]="m.trailerYouTubeKey" [title]="m.title" /></div>
+        </div>
+      }
+
+      @if (m.cast.length) {
+        <h2 class="eyebrow mt-14">Elenco</h2>
+        <ul class="mt-6 grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3">
+          @for (c of m.cast; track c.name) {
+            <li class="flex items-center gap-3">
+              @if (c.profilePath) {
+                <img class="size-12 shrink-0 rounded-full object-cover" [src]="profile(c.profilePath)" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              } @else {
+                <span class="grid size-12 shrink-0 place-items-center rounded-full border border-line bg-well font-mono text-[12px] text-ink-2" aria-hidden="true">{{ initials(c.name) }}</span>
+              }
+              <span class="min-w-0">
+                <span class="block truncate text-[14px] font-medium">{{ c.name }}</span>
+                <span class="block truncate text-[12px] text-ink-2">{{ c.character }}</span>
+              </span>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+
+    <aside class="h-fit lg:sticky lg:top-24">
+      <dl class="card divide-y divide-line text-[14px]">
+        <div class="px-5 py-4"><dt class="mono-label">Direção</dt><dd class="mt-1">{{ m.director ?? 'Não informado' }}</dd></div>
+        <div class="px-5 py-4"><dt class="mono-label">Duração</dt><dd class="mt-1">{{ m.runtime }} minutos</dd></div>
+        <div class="px-5 py-4"><dt class="mono-label">Gêneros</dt><dd class="mt-1">{{ m.genres.join(', ') }}</dd></div>
+        <div class="px-5 py-4">
+          <dt class="mono-label">Classificação indicativa</dt>
+          <dd class="mt-2 flex items-center gap-2"><app-cert [value]="m.certification" />{{ certLabel(m.certification) }}</dd>
+        </div>
+        @if (m.status === 'now') {
+          <div class="px-5 py-4"><dt class="mono-label">Formatos</dt><dd class="mt-2 flex flex-wrap gap-1">@for (f of formats(); track f) { <span class="tag">{{ f }}</span> }</dd></div>
+        }
+      </dl>
+    </aside>
+  </section>
+
+  <!-- ============ OUTROS ============ -->
+  <section class="wrap pt-24" aria-labelledby="t-outros">
+    <p class="eyebrow">Também em cartaz</p>
+    <h2 id="t-outros" class="h2 mt-3 text-3xl sm:text-4xl">Outros filmes</h2>
+    <div class="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-5">
+      @for (o of others(); track o.id; let i = $index) {
+        <app-movie-card [movie]="o" [reveal]="(i % 5) * 60" />
+      }
+    </div>
+  </section>
+} @else {
+  <section class="wrap py-24 text-center">
+    <p class="eyebrow">Erro 404</p>
+    <h1 class="h-display mt-4 text-5xl">Filme não encontrado</h1>
+    <p class="mt-4 text-ink-2">Este filme saiu de cartaz ou o endereço está incorreto.</p>
+    <a class="btn btn-primary mt-8" routerLink="/">Ver filmes em cartaz</a>
+  </section>
+}

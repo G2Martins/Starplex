@@ -1,0 +1,222 @@
+<!-- ============ HERO ============ -->
+<section class="relative isolate overflow-hidden border-b border-line" aria-labelledby="hero-title">
+  @for (m of [hero()]; track m.id) {
+    @if (backdrop(m); as b) {
+      <img class="drift absolute inset-0 -z-20 h-full w-full object-cover object-[50%_30%] opacity-90" [src]="b.src" [attr.srcset]="b.set" sizes="100vw"
+           alt="" width="1280" height="720" fetchpriority="high" decoding="async" />
+    }
+  }
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-paper via-paper/85 to-paper/10"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-paper via-paper/10 to-paper/50"></div>
+  <div class="beam pointer-events-none absolute inset-x-0 top-0 -z-10 h-[140%] opacity-80" aria-hidden="true"></div>
+
+  <div class="wrap grid min-h-[36rem] items-end gap-10 pb-12 pt-20 lg:min-h-[42rem] lg:grid-cols-[minmax(0,1fr)_auto] lg:pb-16">
+    @for (m of [hero()]; track m.id) {
+      <div class="max-w-2xl">
+        <p class="eyebrow materialize">Em cartaz · Destaque {{ pick() + 1 }} de {{ featured.length }}</p>
+        <h1 id="hero-title" class="h-display mt-5 text-[2.5rem] sm:text-6xl lg:text-[4.6rem]">
+          <span class="mask"><span class="rise">{{ m.title }}</span></span>
+        </h1>
+        <div class="materialize mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] text-ink-2" style="animation-delay: 120ms">
+          <app-cert [value]="m.certification" />
+          <span class="inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.1em]"><app-icon name="clock" [size]="14" />{{ runtime(m.runtime) }}</span>
+          <span>{{ m.genres.slice(0, 3).join(' · ') }}</span>
+        </div>
+        <p class="materialize mt-5 line-clamp-3 max-w-xl text-[15px] text-ink-2 sm:text-base" style="animation-delay: 200ms">{{ m.overview }}</p>
+        <div class="materialize mt-8 flex flex-wrap gap-3" style="animation-delay: 280ms">
+          <a class="btn btn-primary" [routerLink]="['/filmes', m.slug]" fragment="sessoes"><app-icon name="ticket" [size]="18" />Comprar ingresso</a>
+          @if (m.trailerYouTubeKey) {
+            <button type="button" class="btn btn-glass" (click)="openTrailer(m)"><app-icon name="play" [size]="16" />Ver trailer</button>
+          }
+          <a class="btn btn-ghost" [routerLink]="['/filmes', m.slug]">Detalhes<app-icon name="arrow-right" [size]="16" /></a>
+        </div>
+      </div>
+    }
+
+    <div class="ticks">
+      <p class="mono-label mb-3 hidden lg:block">Destaques</p>
+      <div class="flex gap-3 lg:flex-col" role="group" aria-label="Escolher filme em destaque">
+        @for (f of featured; track f.id; let i = $index) {
+          <button type="button" class="w-14 shrink-0 overflow-hidden rounded-[8px] border transition-transform duration-300 ease-out-expo hover:-translate-y-0.5 lg:w-[68px]"
+                  [class]="i === pick() ? 'border-accent shadow-[0_0_0_3px_rgb(238_118_35/0.3)]' : 'border-line opacity-70 hover:opacity-100'"
+                  [attr.aria-pressed]="i === pick()" [attr.aria-label]="'Destacar ' + f.title" (click)="pick.set(i)">
+            <app-poster [movie]="f" sizes="68px" kind="thumb" />
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="overflow-hidden border-b border-line bg-[#0b0814] py-3" aria-hidden="true">
+  <div class="marquee flex w-max items-center gap-7 font-mono text-[12px] uppercase tracking-[0.18em] text-ink-2">
+    @for (t of ticker; track $index) {
+      <span class="whitespace-nowrap">{{ t }}</span><span class="size-1.5 rotate-45 bg-accent"></span>
+    }
+  </div>
+</div>
+
+<!-- ============ EM CARTAZ ============ -->
+<section id="em-cartaz" class="cv wrap pt-20" aria-labelledby="t-cartaz">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div>
+      <p class="eyebrow">Programação · {{ city }}</p>
+      <h2 id="t-cartaz" class="h2 mt-3 text-4xl sm:text-5xl">Em cartaz <span class="align-top font-mono text-sm tracking-normal text-ink-2">{{ list().length }}</span></h2>
+    </div>
+    <div class="flex w-full flex-wrap gap-2 sm:w-auto">
+      <label class="min-w-0 flex-1 sm:flex-none">
+        <span class="sr-only">Gênero</span>
+        <select class="field w-full" (change)="genre.set(value($event))">
+          <option value="" [selected]="!genre()">Todos os gêneros</option>
+          @for (g of genres; track g) { <option [value]="g" [selected]="g === genre()">{{ g }}</option> }
+        </select>
+      </label>
+      <label class="min-w-0 flex-1 sm:flex-none">
+        <span class="sr-only">Cinema</span>
+        <select class="field w-full" (change)="store.cinema.set(value($event))">
+          <option value="" [selected]="!store.cinema()">Todos os cinemas</option>
+          @for (c of cinemas; track c.id) { <option [value]="c.id" [selected]="c.id === store.cinema()">{{ c.short }}</option> }
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="no-bar -mx-4 mt-6 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:px-0" role="group" aria-label="Formato">
+    <button type="button" class="pill" [attr.aria-pressed]="!format()" (click)="format.set('')">Todos os formatos</button>
+    @for (f of formats; track f) {
+      <button type="button" class="pill font-mono" [attr.aria-pressed]="format() === f" (click)="format.set(f)">{{ f }}</button>
+    }
+  </div>
+
+  @defer (hydrate on viewport; hydrate when genre() || format() || store.cinema()) {
+  <div class="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-5">
+    @for (m of list(); track m.id; let i = $index) {
+      <app-movie-card class="cv -m-2 p-2 [contain-intrinsic-size:auto_23rem]" [movie]="m" [reveal]="(i % 5) * 60" />
+    } @empty {
+      <div class="col-span-full rounded-[13px] border border-dashed border-line p-10 text-center">
+        <p class="text-[15px]">Nenhum filme com esses filtros.</p>
+        <button type="button" class="btn btn-line mt-5" (click)="clear()">Limpar filtros</button>
+      </div>
+    }
+  </div>
+  } @placeholder {
+    <div class="mt-10 min-h-[40rem]"></div>
+  }
+</section>
+
+<!-- ============ EM BREVE ============ -->
+@if (soon.length) {
+  <section class="cv wrap pt-24" aria-labelledby="t-breve">
+    @defer (hydrate on viewport) {
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow">Próximas estreias</p>
+        <h2 id="t-breve" class="h2 mt-3 text-4xl sm:text-5xl">Em breve</h2>
+      </div>
+      <p class="hidden max-w-xs text-right text-[14px] text-ink-2 sm:block">Ingressos liberados na semana de estreia.</p>
+    </div>
+    <div class="scroll-x -mx-4 mt-10 flex snap-x snap-mandatory gap-5 px-4 pb-4 sm:mx-0 sm:px-0">
+      @for (m of soon; track m.id) {
+        <app-movie-card class="cv -m-2 w-[calc(42vw+1rem)] shrink-0 snap-start p-2 [contain-intrinsic-size:auto_21rem] sm:w-[216px]" [movie]="m" sizes="(min-width: 640px) 200px, 42vw" reveal />
+      }
+    </div>
+    } @placeholder {
+      <div class="min-h-[30rem]"></div>
+    }
+  </section>
+}
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="cv wrap pt-24" aria-labelledby="t-como">
+  @defer (hydrate on viewport) {
+  <p class="eyebrow">Como funciona</p>
+  <h2 id="t-como" class="h2 mt-3 max-w-2xl text-4xl sm:text-5xl">Do trailer à poltrona em <span class="grad">quatro passos</span>.</h2>
+  <ol class="mt-12 grid gap-px overflow-hidden rounded-[13px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+    @for (s of steps; track $index; let i = $index) {
+      <li class="bg-surface p-6" [reveal]="i * 80">
+        <p class="font-mono text-[12px] text-accent-ink">0{{ i + 1 }}</p>
+        <p class="mt-8 text-[17px] font-medium tracking-tight">{{ s[0] }}</p>
+        <p class="mt-2 text-[14px] text-ink-2">{{ s[1] }}</p>
+      </li>
+    }
+  </ol>
+  } @placeholder {
+    <div class="min-h-[30rem]"></div>
+  }
+</section>
+
+<!-- ============ BOMBONIERE ============ -->
+<section class="cv wrap pt-24" aria-labelledby="t-bomb">
+  @defer (hydrate on viewport) {
+  <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
+    <div class="card card-accent dotgrid relative grid grid-cols-1 gap-6 overflow-hidden p-6 sm:grid-cols-[1fr_auto] sm:p-10" reveal>
+      <div class="flex flex-col">
+        <p class="eyebrow">Bomboniere</p>
+        <h2 id="t-bomb" class="h2 mt-3 text-4xl sm:text-5xl">Pipoca quentinha, <span class="grad">sem fila</span>.</h2>
+        <p class="mt-4 max-w-sm text-[15px] text-ink-2">Monte seu combo junto com o ingresso ou peça só a bomboniere e retire no balcão expresso da unidade.</p>
+        <div class="mt-auto pt-8">
+          <p class="mono-label">{{ combo.tag }} · {{ combo.name }}</p>
+          <p class="mt-1 text-2xl font-medium tracking-tight">{{ brl(combo.variants[0].price) }}</p>
+          <a class="btn btn-primary mt-5" routerLink="/bomboniere">Montar meu combo<app-icon name="arrow-right" [size]="16" /></a>
+        </div>
+      </div>
+      <app-snack-art kind="bucket" class="mx-auto size-48 sm:size-64" />
+    </div>
+    <ul class="grid grid-cols-1 content-center gap-3">
+      @for (s of extras; track s.id; let i = $index) {
+        <li class="stretch panel lift flex items-center gap-4 p-4" [reveal]="i * 80">
+          <app-snack-art [kind]="s.art" class="size-14 shrink-0 rounded-[10px] bg-well p-1.5" />
+          <div class="min-w-0 flex-1">
+            <a class="stretch-link font-medium" routerLink="/bomboniere">{{ s.name }}</a>
+            <p class="truncate text-[13px] text-ink-2">{{ s.desc }}</p>
+          </div>
+          <p class="shrink-0 text-right font-mono text-[12px] leading-tight text-ink-2">@if (s.variants.length > 1) { <span class="block">a partir de</span> }<span class="text-[13px] text-ink">{{ brl(s.variants[0].price) }}</span></p>
+        </li>
+      }
+    </ul>
+  </div>
+  } @placeholder {
+    <div class="min-h-[30rem]"></div>
+  }
+</section>
+
+<!-- ============ CINEMAS ============ -->
+<section class="cv wrap pt-24" aria-labelledby="t-cin">
+  @defer (hydrate on viewport) {
+  <div class="flex items-end justify-between gap-6">
+    <div>
+      <p class="eyebrow">Unidades · {{ city }}</p>
+      <h2 id="t-cin" class="h2 mt-3 text-4xl sm:text-5xl">Nossos cinemas</h2>
+    </div>
+    <a class="btn btn-line hidden sm:inline-flex" routerLink="/cinemas">Ver todos<app-icon name="arrow-right" [size]="16" /></a>
+  </div>
+  <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+    @for (c of cinemas; track c.id; let i = $index) {
+      <article class="card flex flex-col p-6" [reveal]="i * 80">
+        <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-accent-ink">0{{ i + 1 }} · {{ c.rooms.length }} salas</p>
+        <h3 class="mt-4 text-xl font-medium tracking-tight">{{ c.name }}</h3>
+        <p class="mt-1 flex items-start gap-1.5 text-[14px] text-ink-2"><app-icon name="pin" [size]="15" class="mt-1" />{{ c.address }}, {{ c.district }}</p>
+        <p class="mt-4 flex flex-wrap gap-1">@for (f of cinemaFormats(c.id); track f) { <span class="tag">{{ f }}</span> }</p>
+        <div class="mt-auto flex flex-wrap gap-2 pt-6">
+          <a class="btn btn-line !min-h-10 text-[13px]" routerLink="/" fragment="em-cartaz" (click)="store.cinema.set(c.id)">Ver filmes</a>
+          <a class="btn btn-ghost !min-h-10 text-[13px]" routerLink="/cinemas" [fragment]="c.id">Detalhes</a>
+        </div>
+      </article>
+    }
+  </div>
+  } @placeholder {
+    <div class="min-h-[30rem]"></div>
+  }
+</section>
+
+<dialog #dlg class="m-auto w-[min(960px,calc(100vw-2rem))] overflow-hidden rounded-[14px] border border-line bg-paper p-0 text-ink backdrop:bg-black/80"
+        aria-label="Trailer" (close)="trailer.set(null)" (click)="$event.target === dlg && dlg.close()">
+  @if (trailer(); as t) {
+    <div class="flex items-center justify-between gap-4 py-2 pl-5 pr-2">
+      <p class="mono-label truncate">Trailer · {{ t.title }}</p>
+      <button type="button" class="icon-btn" aria-label="Fechar trailer" (click)="dlg.close()"><app-icon name="x" /></button>
+    </div>
+    <app-trailer class="!rounded-none" [key]="t.trailerYouTubeKey ?? ''" [title]="t.title" [autoplay]="true" />
+  }
+</dialog>

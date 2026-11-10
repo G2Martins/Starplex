@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- Social card template (1200x630). Render with Playwright, see README "Imagem de compartilhamento". -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: Geist; src: url(../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2) format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: GeistMono; src: url(../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2) format("woff2"); font-weight: 100 900; }
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; font-family: Geist, sans-serif; color: #f4f1fb;
+    background: radial-gradient(900px 420px at 30% -80px, rgb(109 76 255 / .28), transparent 70%), #0f0b1a; position: relative; }
+  .dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgb(170 163 194 / .1) 1px, transparent 1px); background-size: 22px 22px; }
+  .beam { position: absolute; inset: 0; background: conic-gradient(from 180deg at 72% 0%, transparent 155deg, rgb(255 190 140 / .1) 170deg, rgb(255 214 176 / .18) 180deg, rgb(255 190 140 / .1) 190deg, transparent 205deg); }
+  .left { position: absolute; left: 72px; top: 70px; width: 560px; }
+  .eyebrow { font-family: GeistMono; font-size: 17px; letter-spacing: .16em; text-transform: uppercase; color: #aaa3c2; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 9px; background: #ee7623; }
+  .logo { margin-top: 44px; display: flex; align-items: flex-end; font-weight: 800; font-size: 92px; letter-spacing: -.02em; line-height: .8; }
+  .logo svg { width: 92px; height: 72px; margin: 0 -6px; transform: translateY(4px); }
+  h1 { margin-top: 44px; font-weight: 300; font-size: 50px; line-height: 1.05; letter-spacing: -.04em; }
+  .grad { background: linear-gradient(90deg, #ee7623, #ff9b54 55%, #ffd4ad); -webkit-background-clip: text; color: transparent; }
+  .foot { position: absolute; left: 72px; bottom: 58px; font-family: GeistMono; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; color: #aaa3c2; }
+  .posters { position: absolute; right: 40px; top: 60px; width: 520px; height: 520px; }
+  .p { position: absolute; width: 210px; aspect-ratio: 2/3; border-radius: 14px; overflow: hidden; border: 1px solid #2a2244;
+       box-shadow: 0 0 0 7px #1b1530, 0 0 0 8px #2a2244, 0 30px 60px rgb(0 0 0 / .5); }
+  .p img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .p1 { left: 20px; top: 70px; transform: rotate(-8deg); }
+  .p2 { left: 160px; top: 20px; z-index: 2; transform: rotate(1deg); width: 230px; }
+  .p3 { left: 300px; top: 90px; transform: rotate(9deg); }
+  .sprockets { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: repeating-linear-gradient(90deg, rgb(244 241 251 / .12) 0 12px, transparent 12px 26px); }
+</style>
+</head>
+<body>
+  <div class="dots"></div><div class="beam"></div>
+  <div class="left">
+    <p class="eyebrow">Cinema · Brasília</p>
+    <div class="logo">ST<svg viewBox="70 108 362 282"><path fill="#EE7623" d="M75 383 232 115l51 81-39 33 148-41-247 159Z"/><path fill="#EE7623" d="m243 370 79-75 70-107-59 99 47 83Z"/><path fill="#FFB27A" d="m400 158 5 20 20 5-20 5-5 20-5-20-19-5 19-5Z"/></svg>RPLEX</div>
+    <h1>Filmes em cartaz, assentos e <span class="grad">bomboniere</span> em poucos cliques.</h1>
+  </div>
+  <p class="foot">Projeto de portfólio · Compras simuladas</p>
+  <div class="posters">
+    <div class="p p1"><img src="https://image.tmdb.org/t/p/w500/yfWe8Vaac8b8f9dagmzBWOroUcg.jpg"></div>
+    <div class="p p2"><img src="https://image.tmdb.org/t/p/w500/ebVZ8n64rtHsSItTei4EgTKzPVu.jpg"></div>
+    <div class="p p3"><img src="https://image.tmdb.org/t/p/w500/fy7q7xcyUjHXiKRuYblhcUTgBn0.jpg"></div>
+  </div>
+  <div class="sprockets"></div>
+</body>
+</html>

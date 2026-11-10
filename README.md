@@ -1,27 +1,91 @@
 # Starplex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+Rede de cinemas fictícia em Brasília: um MVP de venda de ingressos feito como peça de portfólio.
+Filmes em cartaz de verdade (TMDB), sessões dos próximos 7 dias, mapa de assentos, meia-entrada,
+bomboniere e checkout **simulado**.
 
-## Development server
+**Site:** https://g2martins.github.io/Starplex/ · **Sobre o projeto:** https://g2portfolio.grovicdata.com/projetos/starplex
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+> Projeto de portfólio de [Gustavo Martins Gripaldi](https://g2portfolio.grovicdata.com). Compras simuladas:
+> nenhum pagamento é real, nenhum dado de pagamento ou pessoal é coletado. Cinemas, salas, sessões e
+> assentos ocupados são gerados.
 
-## Code scaffolding
+## O que tem
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Rota | Render | O que faz |
+| --- | --- | --- |
+| `/` | prerender | Destaque com trailer, "Em cartaz" com filtros (gênero, formato, cinema), "Em breve", bomboniere e cinemas |
+| `/filmes/:slug` | prerender (1 por filme) | Sinopse, classificação indicativa, elenco, trailer (YouTube só após o clique, `youtube-nocookie`), sessões por data, cinema e formato |
+| `/sessao/:id` | client | Fluxo com reserva de 10:00: assentos (PCD, acompanhante, namoradeira, VIP, até 8) → inteira/meia → bomboniere → Pix simulado → confirmação |
+| `/bomboniere` | prerender | Cardápio com combos e pedido avulso para retirada na unidade |
+| `/cinemas` | prerender | 3 unidades fictícias, salas 2D, 3D, IMAX e VIP, preços |
+| `/meus-ingressos` | client | Pedidos salvos no `localStorage`, filtro e cancelamento simulado |
 
-## Build
+Detalhes que valem olhar:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Sessões determinísticas:** um PRNG com semente (filme + cinema + data) gera horários realistas e os
+  assentos ocupados (20 a 60%, concentrados no centro). O mesmo link de sessão mostra o mesmo mapa em qualquer
+  aparelho. Código em [`src/app/data/sessions.ts`](src/app/data/sessions.ts).
+- **Mapa de assentos acessível:** cada assento é um `<button>` com `aria-label` ("Fileira F, assento 7, disponível")
+  e `aria-pressed`, navegável pelas setas do teclado.
+- **Pagamento sem coleta de dados:** só "Pix (simulação)" com QR decorativo (não legível). Não existe campo de
+  cartão, CPF ou e-mail.
+- **SEO:** título, descrição, canonical e Open Graph por rota, JSON-LD `WebSite` + `Movie` + `BreadcrumbList`
+  nas páginas de filme, `sitemap.xml` e `robots.txt` gerados a partir dos dados. Sem `ScreeningEvent`/`Offer`,
+  porque as sessões não são reais.
+- **Performance:** páginas de catálogo pré-renderizadas, hidratação incremental das seções abaixo da dobra,
+  `content-visibility` nos cartazes, fonte Geist com preload, imagens com dimensões fixas (CLS 0).
 
-## Running unit tests
+## Stack
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular 21 (standalone, zoneless, signals, SSG com `outputMode: "static"`), Tailwind CSS v4, TypeScript 5.9,
+Geist + Geist Mono. Design derivado do sistema Valerium (Grovic Data): eyebrows mono, cards "well",
+cantoneiras, grade de pontos, entradas out-expo; só `transform`/`opacity` animam e `prefers-reduced-motion`
+é respeitado. Conteúdo visível sem JavaScript.
 
-## Running end-to-end tests
+## Rodar
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Requer Node 22.18+ (os scripts usam TypeScript nativo).
 
-## Further help
+```bash
+npm install
+npm start            # http://localhost:4200/Starplex/
+npm run build        # gera sitemap/robots e o build estático em dist/
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Atualizar os filmes (TMDB)
+
+`src/app/data/movies.json` é a fonte única dos filmes. Para buscar a programação atual do Brasil:
+
+1. Crie um token de leitura (v4, "API Read Access Token") em https://www.themoviedb.org/settings/api
+2. Copie `.env.example` para `.env` e preencha `TMDB_TOKEN=` (o `.env` está no `.gitignore`)
+3. Rode:
+
+```bash
+npm run movies && npm run build:pages
+```
+
+O script pega ~16 filmes em cartaz e ~8 próximas estreias (pt-BR, região BR), com classificação indicativa
+brasileira, elenco, diretor e trailer. Sem token, ou se a API falhar, o `movies.json` atual é mantido.
+Para voltar ao conjunto offline de exemplo (cartazes locais em `public/img`):
+`cp src/app/data/movies.fixture.json src/app/data/movies.json`.
+
+Este produto usa a API do TMDB, mas não é endossado ou certificado pelo TMDB.
+
+## Publicar
+
+GitHub Pages servindo `main:/docs`.
+
+```bash
+npm run build:pages
+```
+
+Copia `dist/starplex/browser` para `docs/`, cria `.nojekyll` e usa o shell client-side como `404.html`
+para que links diretos de rotas client (como `/sessao/...`) funcionem. `docs/` é saída de build: não edite à mão.
+
+**Imagem de compartilhamento:** `public/og.png` (1200x630) foi gerada a partir de `scripts/og.html` com
+Playwright (screenshot da página em 1200x630).
+
+## Créditos
+
+Código por Gustavo Martins Gripaldi. Dados e imagens de filmes: TMDB. Marca Starplex e unidades são fictícias.

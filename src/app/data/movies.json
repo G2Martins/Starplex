@@ -1,0 +1,1258 @@
+{
+  "source": "tmdb",
+  "updatedAt": "2026-11-10",
+  "movies": [
+    {
+      "id": 1058424,
+      "slug": "hope-o-primeiro-impacto",
+      "title": "Hope: O Primeiro Impacto",
+      "originalTitle": "호프",
+      "overview": "A polícia investiga a presença de uma criatura misteriosa que vem causando tumulto na remota vila de Hope Harbor. Ao seguir os rastros do animal, um grupo de caçadores acaba se tornando sua presa involuntária, dando início a um conflito que se transforma em uma tragédia de proporções cósmicas.",
+      "posterPath": "/yfWe8Vaac8b8f9dagmzBWOroUcg.jpg",
+      "backdropPath": "/j96rurZqmBjyY37Fncl3IB0qJNe.jpg",
+      "runtime": 156,
+      "genres": [
+        "Ficção científica",
+        "Mistério",
+        "Ação"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-10-08",
+      "voteAverage": 6.7,
+      "cast": [
+        {
+          "name": "Hwang Jung-Min",
+          "character": "Go Bum-seok",
+          "profilePath": "/hKF1uh0iEfuZlBE79CXPw415qyn.jpg"
+        },
+        {
+          "name": "Cho In-sung",
+          "character": "Go Sung-ki",
+          "profilePath": "/69gbyFI0ET0l0dyjKChlx1Zx269.jpg"
+        },
+        {
+          "name": "Hoyeon Jung",
+          "character": "Lim Sung-ae",
+          "profilePath": "/AfQFFyGeG9xOQnEJb1Ash1RomkP.jpg"
+        },
+        {
+          "name": "Alicia Vikander",
+          "character": "J'aur",
+          "profilePath": "/lZu8qiTwiQIN96cuptgqMCCaUtg.jpg"
+        },
+        {
+          "name": "Michael Fassbender",
+          "character": "Ma'veyyo",
+          "profilePath": "/xvbnUiB2ZBR3QIt595OzNy657Vw.jpg"
+        },
+        {
+          "name": "Taylor Russell",
+          "character": "Ai'dovor",
+          "profilePath": "/3kW1SvpzyOPPZHxbz7cgR7ilmtQ.jpg"
+        }
+      ],
+      "director": "Na Hong-Jin",
+      "trailerYouTubeKey": "OFaJzL83y0Q",
+      "status": "now"
+    },
+    {
+      "id": 1381071,
+      "slug": "godzilla-minus-zero",
+      "title": "Godzilla Minus Zero",
+      "originalTitle": "ゴジラ-0.0",
+      "overview": "A guerra reduziu o Japão a zero, e o Godzilla mergulhou-o no negativo. Passaram-se dois anos desde então, e o país tem enfrentado lutas agonizantes para alcançar a recuperação e, finalmente, voltar à vida normal. No momento em que a humanidade conseguiu se agarrar a uma paz conquistada com dificuldade, surge uma nova ameaça, esmagando a esperança num instante.",
+      "posterPath": "/ebVZ8n64rtHsSItTei4EgTKzPVu.jpg",
+      "backdropPath": "/oqrYIDH4tvfEzPe1yqT4jzmAWHQ.jpg",
+      "runtime": 135,
+      "genres": [
+        "Ficção científica",
+        "Terror",
+        "Ação"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-11-05",
+      "voteAverage": 7.9,
+      "cast": [
+        {
+          "name": "Ryunosuke Kamiki",
+          "character": "Koichi Shikishima",
+          "profilePath": "/ut7ewXjdgUmgkhJ1EtbOo9tbc7s.jpg"
+        },
+        {
+          "name": "Minami Hamabe",
+          "character": "Noriko Shikishima",
+          "profilePath": "/eQN8N2chINckvQDiNqzDXI0v9vN.jpg"
+        },
+        {
+          "name": "Yuki Yamada",
+          "character": "Shiro Mizushima",
+          "profilePath": "/1oRe8UYddBYzyqAjlSwMTIFgg4K.jpg"
+        },
+        {
+          "name": "Kuranosuke Sasaki",
+          "character": "Seiji Akitsu",
+          "profilePath": "/lPDKfLKIKDCBdqig3uhYnPjwY5h.jpg"
+        },
+        {
+          "name": "Kunimura Jun",
+          "character": "Dr. Ogata",
+          "profilePath": "/zC0GbuXQGPur7i8AkdPUWedmDKz.jpg"
+        },
+        {
+          "name": "Miou Tanaka",
+          "character": "Captain Tatsuo Hotta",
+          "profilePath": "/4dXKZqcF1K6n6yVAGVVRlsc1RU0.jpg"
+        }
+      ],
+      "director": "Takashi Yamazaki",
+      "trailerYouTubeKey": "pWJjYoqVSjQ",
+      "status": "now"
+    },
+    {
+      "id": 1283515,
+      "slug": "verity",
+      "title": "Verity",
+      "originalTitle": "Verity",
+      "overview": "A escritora Lowen Ashleigh está à beira da falência quando aceita a oportunidade de sua vida: completar os livros restantes de uma série de sucesso que Verity Crawford, autora de thrillers best-sellers, não consegue terminar após um acidente misterioso. Ao chegar à luxuosa propriedade dos Crawford, Ashleigh percebe gradualmente que as coisas não são exatamente o que parecem.",
+      "posterPath": "/fy7q7xcyUjHXiKRuYblhcUTgBn0.jpg",
+      "backdropPath": "/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
+      "runtime": 117,
+      "genres": [
+        "Mistério",
+        "Thriller"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-10-01",
+      "voteAverage": 7,
+      "cast": [
+        {
+          "name": "Dakota Johnson",
+          "character": "Lowen Ashleigh",
+          "profilePath": "/bSfVBJ8S3F1MPpCmIWb8UJcUZGP.jpg"
+        },
+        {
+          "name": "Anne Hathaway",
+          "character": "Verity Crawford",
+          "profilePath": "/s6tflSD20MGz04ZR2R1lZvhmC4Y.jpg"
+        },
+        {
+          "name": "Josh Hartnett",
+          "character": "Jeremy Crawford",
+          "profilePath": "/5eMo8D7h1XrSu6ZN4UXhPcS6YNG.jpg"
+        },
+        {
+          "name": "Brady Wagner",
+          "character": "Crew Crawford",
+          "profilePath": "/9zwYF2aPqotnCknqXktEbZ9wdg7.jpg"
+        },
+        {
+          "name": "Ismael Cruz Cordova",
+          "character": "Corey",
+          "profilePath": "/oXcrsQGndk60iFkNB8qFnMHlNzL.jpg"
+        },
+        {
+          "name": "Irina Vladimirovna Dvorovenko",
+          "character": "Anna",
+          "profilePath": "/hGmlhlYZEU73AlaiUqAcoIWtYU8.jpg"
+        }
+      ],
+      "director": "Michael Showalter",
+      "trailerYouTubeKey": "VRO8fSFJmLs",
+      "status": "now"
+    },
+    {
+      "id": 1101412,
+      "slug": "a-queda-2-no-limite",
+      "title": "A Queda 2: No Limite",
+      "originalTitle": "Fall 2: Deadpoint",
+      "overview": "De luto pela morte de sua irmã Shiloh, Jax Hunter cria um laço com Luce, a amiga corajosa de Shiloh. Juntas, elas enfrentam a perigosa passarela suspensa do Monte Kwan, na Tailândia. Quando um deslizamento de rochas as deixa presas em uma estreita prancha a mais de 3.000 metros de altitude, Jax precisa enfrentar seus medos para sobreviver.",
+      "posterPath": "/xtxEvJACNnbz3WYmJ5mYT1a0KGk.jpg",
+      "backdropPath": "/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
+      "runtime": 100,
+      "genres": [
+        "Thriller"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-10-01",
+      "voteAverage": 7.3,
+      "cast": [
+        {
+          "name": "Harriet Slater",
+          "character": "Jax Hunter",
+          "profilePath": "/9BJxdhi4tuiQdgT8bfDuiPipnsx.jpg"
+        },
+        {
+          "name": "Arsema Thomas",
+          "character": "Luce",
+          "profilePath": "/tFdTyIrWsPIItcOP3OcyHtCboqC.jpg"
+        },
+        {
+          "name": "Tom Brittney",
+          "character": "Jon Platt",
+          "profilePath": "/qSe3SuZHVPR5AMOuOAGxLdD6kYv.jpg"
+        },
+        {
+          "name": "Pu Sahajak Boonthanakit",
+          "character": "Thai Barman",
+          "profilePath": "/a36MI02S0f11bJZjBoxkZTsUDAK.jpg"
+        },
+        {
+          "name": "Korakod Yensuk",
+          "character": "Large Woman",
+          "profilePath": null
+        },
+        {
+          "name": "Jordan Coleman",
+          "character": "Real Luce",
+          "profilePath": "/57FrMe016RyMHm8WDL2mK7P0bmS.jpg"
+        }
+      ],
+      "director": "Michael Spierig",
+      "trailerYouTubeKey": "Of5SX4EF6vs",
+      "status": "now"
+    },
+    {
+      "id": 791523,
+      "slug": "o-bosque-selvagem",
+      "title": "O Bosque Selvagem",
+      "originalTitle": "Wildwood",
+      "overview": "A determinada adolescente Prue McKeel embarca em uma missão desesperada de resgate depois que seu irmão caçula é sequestrado por um bando de corvos. Acompanhada por seu colega de classe desajeitado, mas leal, Curtis Mehlberg, Prue navega por um mundo habitado por animais falantes, bandidos e figuras poderosas movidas pela dor e pela ambição. À medida que a dupla é arrastada para um conflito que ameaça o equilíbrio da própria floresta, Prue precisa descobrir uma força e uma crença que jamais soube que possuía.",
+      "posterPath": "/mcuUYNWGJHPEaRumOlgSZCzMRPc.jpg",
+      "backdropPath": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+      "runtime": 130,
+      "genres": [
+        "Animação",
+        "Aventura",
+        "Fantasia"
+      ],
+      "certification": "14",
+      "releaseDate": "2026-10-29",
+      "voteAverage": 8.5,
+      "cast": [
+        {
+          "name": "Peyton Elizabeth Lee",
+          "character": "Prue McKeel (voice)",
+          "profilePath": "/hnEl4HxqGNGHCJ7Y8l3dJ21WHeG.jpg"
+        },
+        {
+          "name": "Jacob Tremblay",
+          "character": "Curtis Mehlberg (voice)",
+          "profilePath": "/h8CXDp86Y36CUENF4SXJq5ZRTsf.jpg"
+        },
+        {
+          "name": "Carey Mulligan",
+          "character": "Alexandra (voice)",
+          "profilePath": "/iwVHhqoz5b62FR0SDpZ7wfsuTBI.jpg"
+        },
+        {
+          "name": "Mahershala Ali",
+          "character": "Brenden (voice)",
+          "profilePath": "/9ZmSejm5lnUVY5IJ1iNx2QEjnHb.jpg"
+        },
+        {
+          "name": "Richard E. Grant",
+          "character": "Owl Rex (voice)",
+          "profilePath": "/92oaBntIXhndCxUXaGywUyILIIE.jpg"
+        },
+        {
+          "name": "Angela Bassett",
+          "character": "The General (voice)",
+          "profilePath": "/tKnuviliyeKNGlo26IU5gIrJAtd.jpg"
+        }
+      ],
+      "director": "Travis Knight",
+      "trailerYouTubeKey": "bJQGtSeLPII",
+      "status": "now"
+    },
+    {
+      "id": 1400940,
+      "slug": "cara-de-barro",
+      "title": "Cara-de-Barro",
+      "originalTitle": "Clayface",
+      "overview": "A ascensão meteórica de Matt Hagen de garoto das ruas de Gotham a astro de Hollywood é tragicamente interrompida quando as ações de um chefão do crime local o deixam terrivelmente desfigurado. Abandonado por sua equipe e sem nada, Matt busca um tratamento de ponta que, milagrosamente, o devolve à sua antiga forma... mas que também afeta, de maneira inesperada, sua percepção da realidade, lançando-o em uma espiral destrutiva de obsessão e vingança.",
+      "posterPath": "/dqvHs2YXks989ScXvsngbqAeBHX.jpg",
+      "backdropPath": "/uL4cIrNi2uaUnWIOQQ28EVnkETG.jpg",
+      "runtime": 109,
+      "genres": [
+        "Terror",
+        "Thriller",
+        "Ficção científica"
+      ],
+      "certification": "18",
+      "releaseDate": "2026-10-22",
+      "voteAverage": 7.4,
+      "cast": [
+        {
+          "name": "Tom Rhys Harries",
+          "character": "Matt Hagen / Clayface",
+          "profilePath": "/elxvpHPqOxGcKe6U2hcArIcpyWo.jpg"
+        },
+        {
+          "name": "Naomi Ackie",
+          "character": "Caitlyn Corr",
+          "profilePath": "/dijwuTAEZUzQtoJfK49S4X80fQw.jpg"
+        },
+        {
+          "name": "Eddie Marsan",
+          "character": "Frank Fitzpatrick",
+          "profilePath": "/9atfOgIxhfOKvv2be8HEp6SzOct.jpg"
+        },
+        {
+          "name": "Max Minghella",
+          "character": "John Borrelli",
+          "profilePath": "/AhVDxsOOoAnwwVBL7ZY8W0mGsYJ.jpg"
+        },
+        {
+          "name": "David Dencik",
+          "character": "Markos Szabo",
+          "profilePath": "/q5wLADc6yYd3owxSEG8VKbf7YWV.jpg"
+        },
+        {
+          "name": "Francesca Corney",
+          "character": "Rosie",
+          "profilePath": "/p2B2dYAvl0TMUtbrZxzOdNgBbSE.jpg"
+        }
+      ],
+      "director": "James Watkins",
+      "trailerYouTubeKey": "4bDokT3p_4M",
+      "status": "now"
+    },
+    {
+      "id": 1204680,
+      "slug": "coyote-vs-acme",
+      "title": "Coyote vs. Acme",
+      "originalTitle": "Coyote vs. Acme",
+      "overview": "Após décadas de falhas catastróficas com os produtos ACME em sua caçada ao Papa-Léguas, Wile E. Coyote decide que é hora de buscar justiça e processar a corporação. Ao lado de um advogado azarado, Coyote trava uma batalha jurídica épica contra o impiedoso CEO da companhia. Enquanto enfrentam o sistema, a dupla desenvolve uma amizade improvável e luta para provar que a culpa de tantos desastres nunca foi do instinto, mas sim de defeitos de fabricação.",
+      "posterPath": "/eZX2GyAJt5k0bL4OJbZGDvvxESD.jpg",
+      "backdropPath": "/rueyXwlewVPAP5NkqCUJx4RjhqB.jpg",
+      "runtime": 102,
+      "genres": [
+        "Comédia",
+        "Aventura",
+        "Família",
+        "Animação"
+      ],
+      "certification": "10",
+      "releaseDate": "2026-08-27",
+      "voteAverage": 8.2,
+      "cast": [
+        {
+          "name": "Will Forte",
+          "character": "Kevin Avery",
+          "profilePath": "/4VEzbkL3HwHTUZAPA5PyypFG2U.jpg"
+        },
+        {
+          "name": "Lana Condor",
+          "character": "Paige Avery",
+          "profilePath": "/vWn27Fk2GLwH7o9fBG9hBWZI6OR.jpg"
+        },
+        {
+          "name": "Tone Bell",
+          "character": "Sal Maltese",
+          "profilePath": "/fB06Xj5FgwvHcZESsNGMupGBTyY.jpg"
+        },
+        {
+          "name": "Luis Guzmán",
+          "character": "Judge Troppogrosso",
+          "profilePath": "/kSdxUckOJj9R5VKrLUnRy14YhNV.jpg"
+        },
+        {
+          "name": "Martha Kelly",
+          "character": "Dottie Jones",
+          "profilePath": "/ac7HoARDIHdYNqpzgJBzpmKHXHR.jpg"
+        },
+        {
+          "name": "P.J. Byrne",
+          "character": "Bill Pelicanos",
+          "profilePath": "/1JVBaxRy3OxkHymD3nwBd5kVWWL.jpg"
+        }
+      ],
+      "director": "Dave Green",
+      "trailerYouTubeKey": "NVgXOsLVx70",
+      "status": "now"
+    },
+    {
+      "id": 891621,
+      "slug": "cavalo-selvagem-nove",
+      "title": "Cavalo Selvagem Nove",
+      "originalTitle": "Wild Horse Nine",
+      "overview": "Pouco antes do golpe de Estado no Chile em 1973, dois agentes da CIA são enviados de Santiago para a Ilha de Páscoa em uma missão de teste de confiança. Entre as famosas estátuas que são o marco da ilha, conhecidas como muais, eles enfrentam passados sombrios e conspirações, enquanto o envolvimento de um dos agentes com estudantes rebeldes ameaça arruinar a viagem.",
+      "posterPath": "/mfnJ58xi3BJLDf9sSHAfNm1QJY9.jpg",
+      "backdropPath": "/3uLA0ujne91bkzFStZICCYeqhnt.jpg",
+      "runtime": 120,
+      "genres": [
+        "Comédia",
+        "Crime",
+        "Thriller"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-11-05",
+      "voteAverage": 8.1,
+      "cast": [
+        {
+          "name": "John Malkovich",
+          "character": "Chris",
+          "profilePath": "/7GoOdGNc4ra1L0F5nJTkmIB37iu.jpg"
+        },
+        {
+          "name": "Sam Rockwell",
+          "character": "Lee",
+          "profilePath": "/afYhNpLwpa65Yy0Q0g00FNFhzx5.jpg"
+        },
+        {
+          "name": "Steve Buscemi",
+          "character": "MJ",
+          "profilePath": "/n0pZumkrcZrAPMoPq684RhYnjPV.jpg"
+        },
+        {
+          "name": "Mariana di Girolamo",
+          "character": "Monica",
+          "profilePath": "/niEEPw3RezaA0SvMXbaZXl3rqvD.jpg"
+        },
+        {
+          "name": "Ailín Salas",
+          "character": "Alicia",
+          "profilePath": "/bZWFFUdjs8oMX4sVfCaKi17aFrd.jpg"
+        },
+        {
+          "name": "Parker Posey",
+          "character": "Marge",
+          "profilePath": "/rLtUcJyLpS6cEA8lcbICIafgXf.jpg"
+        }
+      ],
+      "director": "Martin McDonagh",
+      "trailerYouTubeKey": "kqxuamKxRTo",
+      "status": "now"
+    },
+    {
+      "id": 1400837,
+      "slug": "outra-mamae",
+      "title": "Outra Mamãe",
+      "originalTitle": "Other Mommy",
+      "overview": "Uma menina de 8 anos, filha de um casal que enfrenta problemas conjugais, encara uma entidade sinistra que sai do seu armário e torna-se cada vez mais ameaçadora para a família.",
+      "posterPath": "/j6eXMsykSZnXJT20YTdsdS9PXPj.jpg",
+      "backdropPath": "/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
+      "runtime": 93,
+      "genres": [
+        "Terror"
+      ],
+      "certification": "18",
+      "releaseDate": "2026-10-08",
+      "voteAverage": 5.8,
+      "cast": [
+        {
+          "name": "Jessica Chastain",
+          "character": "Mommy / Other Mommy",
+          "profilePath": "/mR1ELpP0T2Q1ZRSaADPgtrbPGla.jpg"
+        },
+        {
+          "name": "Jay Duplass",
+          "character": "Daddo",
+          "profilePath": "/eUY0JDlqzf5pE9pmdvv4IPU3NYn.jpg"
+        },
+        {
+          "name": "Arabella Olivia Clark",
+          "character": "Bela",
+          "profilePath": "/bwTovaznMIXo9Je01soHBCzmFxn.jpg"
+        },
+        {
+          "name": "Karen Allen",
+          "character": "Grandma Ruth",
+          "profilePath": "/eJszpndpRzrXbSlz7RUlApoTykn.jpg"
+        },
+        {
+          "name": "Arian Moayed",
+          "character": "Uncle Frank",
+          "profilePath": "/hYBqwt0HelUqgKSd1VDUAyvfDME.jpg"
+        },
+        {
+          "name": "Dichen Lachman",
+          "character": "Lois Anthony",
+          "profilePath": "/yLrpMHBNtuUAu3M9EjaYHnn5EEY.jpg"
+        }
+      ],
+      "director": "Rob Savage",
+      "trailerYouTubeKey": "-mnTITqqiT0",
+      "status": "now"
+    },
+    {
+      "id": 940721,
+      "slug": "godzilla-minus-one",
+      "title": "Godzilla Minus One",
+      "originalTitle": "ゴジラ-1.0",
+      "overview": "Em um Japão social e economicamente devastado após o término da Segunda Guerra Mundial, a situação chega a um nível ainda mais crítico quando uma gigantesca e misteriosa criatura surge do mar para assolar o país.",
+      "posterPath": "/9XSOyim1pivuSHQqlrDj5gj2J5w.jpg",
+      "backdropPath": "/oHBhHoNe59VH6bUMazDtJmWOFSS.jpg",
+      "runtime": 125,
+      "genres": [
+        "Ficção científica",
+        "Terror",
+        "Ação"
+      ],
+      "certification": "12",
+      "releaseDate": "2023-12-14",
+      "voteAverage": 7.6,
+      "cast": [
+        {
+          "name": "Ryunosuke Kamiki",
+          "character": "Koichi Shikishima",
+          "profilePath": "/ut7ewXjdgUmgkhJ1EtbOo9tbc7s.jpg"
+        },
+        {
+          "name": "Minami Hamabe",
+          "character": "Noriko Oishi",
+          "profilePath": "/eQN8N2chINckvQDiNqzDXI0v9vN.jpg"
+        },
+        {
+          "name": "Yuki Yamada",
+          "character": "Shiro Mizushima",
+          "profilePath": "/1oRe8UYddBYzyqAjlSwMTIFgg4K.jpg"
+        },
+        {
+          "name": "Munetaka Aoki",
+          "character": "Sosaku Tachibana",
+          "profilePath": "/l5GdFPBBz717Kiimyqp5ieaglVo.jpg"
+        },
+        {
+          "name": "Hidetaka Yoshioka",
+          "character": "Kenji Noda",
+          "profilePath": "/xWNS6qStVthhWoxmKDfNS729BjJ.jpg"
+        },
+        {
+          "name": "Sakura Ando",
+          "character": "Sumiko Ota",
+          "profilePath": "/k2R2ryEFEuUe2f3Dsd5yH8aRdqV.jpg"
+        }
+      ],
+      "director": "Takashi Yamazaki",
+      "trailerYouTubeKey": "wApo5F1hzqM",
+      "status": "now"
+    },
+    {
+      "id": 1117898,
+      "slug": "o-gatola-da-cartola",
+      "title": "O Gatola da Cartola",
+      "originalTitle": "The Cat in the Hat",
+      "overview": "O Gatola da Cartola assume sua tarefa mais difícil até agora no I.I.I.I., Instituto para Instituir a Imaginação e a Inspiração: animar e alegrar Gabby e Sebastian, dois irmãos com dificuldade para se adaptar à cidade para a qual acabaram de se mudar. Conhecido por levar as situações longe demais, esta pode ser a última chance de o agente do caos provar seu valor... ou perder seu chapéu mágico!",
+      "posterPath": "/sAUr79TPVXMmZrpsqGh6xTH9jy6.jpg",
+      "backdropPath": "/9y9o686DsQg0KzPtERzcW7Cf8IE.jpg",
+      "runtime": 114,
+      "genres": [
+        "Animação",
+        "Fantasia",
+        "Aventura",
+        "Família"
+      ],
+      "certification": "L",
+      "releaseDate": "2026-11-05",
+      "voteAverage": 7,
+      "cast": [
+        {
+          "name": "Bill Hader",
+          "character": "The Cat in the Hat (voice)",
+          "profilePath": "/qyT50vQ9PQIEctE1IxDTEsBKstU.jpg"
+        },
+        {
+          "name": "Xochitl Gomez",
+          "character": "Gabby (voice)",
+          "profilePath": "/q39DOx44YHrGF1h88R9HxRNZS3.jpg"
+        },
+        {
+          "name": "Tiago Martinez",
+          "character": "Sebastian (voice)",
+          "profilePath": "/hqbi17NIqvNmBhI2KiazHtdpS8j.jpg"
+        },
+        {
+          "name": "Matt Berry",
+          "character": "Waffles (voice)",
+          "profilePath": "/1UCAuXgzQfeANlLnZFVSuq0OFhR.jpg"
+        },
+        {
+          "name": "Quinta Brunson",
+          "character": "Sherrie from HR (voice)",
+          "profilePath": "/1oEdBc88XAN3Z9n2pdNvH1XIT71.jpg"
+        },
+        {
+          "name": "Bowen Yang",
+          "character": "Gary (voice)",
+          "profilePath": "/qzjyaEe7jjLaKSmzQ2dmtcjyCpe.jpg"
+        }
+      ],
+      "director": "Erica Rivinoja",
+      "trailerYouTubeKey": "XaWpFBWOS_0",
+      "status": "now"
+    },
+    {
+      "id": 1377237,
+      "slug": "tres-horas-para-viver",
+      "title": "Três Horas Para Viver",
+      "originalTitle": "Runner",
+      "overview": "Um transportador de elite embarca em uma missão urgente: entregar um órgão vital para salvar a vida de uma garotinha de sete anos. O que parecia ser uma tarefa objetiva logo se transforma em uma corrida frenética contra o tempo quando uma perigosa organização criminosa entra em cena para impedir o sucesso da entrega.",
+      "posterPath": "/vzb3bKOFtciIVSEIsLOZH4uJfxN.jpg",
+      "backdropPath": "/npXZNWjOEYrqdMDPQ11SGBrXqAG.jpg",
+      "runtime": 98,
+      "genres": [
+        "Ação",
+        "Comédia",
+        "Thriller"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-10-29",
+      "voteAverage": 8.3,
+      "cast": [
+        {
+          "name": "Alan Ritchson",
+          "character": "Hank Malone",
+          "profilePath": "/92YNEEpCyugkTzPprJwZpvVtvuK.jpg"
+        },
+        {
+          "name": "Owen Wilson",
+          "character": "Ben Bishop",
+          "profilePath": "/5A46lNOwmpX77jAdhyKxU7e2Hub.jpg"
+        },
+        {
+          "name": "Rodrigo Santoro",
+          "character": "Damian Zaldivar",
+          "profilePath": "/d3MaF9SPHDn2PMYHuqdnO0Csik6.jpg"
+        },
+        {
+          "name": "Leila George",
+          "character": "Kate Baker",
+          "profilePath": "/s46DMiPDGSMq6qad5TL8mG5qfdy.jpg"
+        },
+        {
+          "name": "Kate Box",
+          "character": "Dr. Ainsley",
+          "profilePath": "/zv4NckgNBn6Tc2xhCdNFFx9o9EZ.jpg"
+        },
+        {
+          "name": "Peta Sergeant",
+          "character": "Nurse Julie",
+          "profilePath": "/owkSN29t7P6hpazZKsUMt7FybrP.jpg"
+        }
+      ],
+      "director": "Scott Waugh",
+      "trailerYouTubeKey": "2hXFD_iE-iY",
+      "status": "now"
+    },
+    {
+      "id": 1153576,
+      "slug": "street-fighter",
+      "title": "Street Fighter",
+      "originalTitle": "Street Fighter",
+      "overview": "Em 1993, os lutadores Ryu e Ken Masters são colocados de volta no combate quando a misteriosa Chun-Li os recruta para o próximo Torneio Street Fighter: uma brutal briga de socos, destino e fúria. Entretanto, por trás desse campeonato, se esconde uma conspiração mortal que os força a encarar um ao outro e os demônios do passado. E se eles não fizerem, é game over!",
+      "posterPath": "/6gWmrC2GyDbUM1ET5EBg9lxBi7S.jpg",
+      "backdropPath": "/qRN8eqYwG6HPSy0i3fKzuLrUOhp.jpg",
+      "runtime": 119,
+      "genres": [
+        "Ação",
+        "Fantasia",
+        "Comédia"
+      ],
+      "certification": "14",
+      "releaseDate": "2026-10-15",
+      "voteAverage": 6.3,
+      "cast": [
+        {
+          "name": "Andrew Koji",
+          "character": "Ryu",
+          "profilePath": "/oU53nWLQ6wFHzERwSi1fD53LxZB.jpg"
+        },
+        {
+          "name": "Noah Centineo",
+          "character": "Ken Masters",
+          "profilePath": "/p1bcst401RyxfDGykx2iQLI7CV5.jpg"
+        },
+        {
+          "name": "Callina Liang",
+          "character": "Chun-Li",
+          "profilePath": "/blJ4iEqMs5oTiKVxUyB9Ky7kNRO.jpg"
+        },
+        {
+          "name": "David Dastmalchian",
+          "character": "M. Bison",
+          "profilePath": "/eLafwcpL64CqzwjjSgKpO7Rv4ae.jpg"
+        },
+        {
+          "name": "Andrew Schulz",
+          "character": "Dan Hibiki",
+          "profilePath": "/fdeYq1EraYvlYM3VmGXjIaSGoTz.jpg"
+        },
+        {
+          "name": "Joe Anoa'i",
+          "character": "Akuma",
+          "profilePath": "/6BKc77eAUBQdL9MmgBorBc4SMdE.jpg"
+        }
+      ],
+      "director": "Kitao Sakurai",
+      "trailerYouTubeKey": "R7F6nQtBd5k",
+      "status": "now"
+    },
+    {
+      "id": 1187326,
+      "slug": "as-aventuras-de-tadeo-e-a-lampada-magica",
+      "title": "As Aventuras de Tadeo e a Lâmpada Mágica",
+      "originalTitle": "Tadeo Jones y La Lámpara Maravillosa",
+      "overview": "Tadeo, sua namorada Sara e seus amigos Múmia, Jeff e Belzoni embarcam em uma aventura depois que ele acidentalmente desencadeia um feitiço antigo.",
+      "posterPath": "/sczKkd1Sw7kXU7ZvEUA3C3nFuhE.jpg",
+      "backdropPath": "/zbpimMxf6Ms96v3Zypuv8WltMSO.jpg",
+      "runtime": 94,
+      "genres": [
+        "Animação",
+        "Comédia",
+        "Família"
+      ],
+      "certification": "10",
+      "releaseDate": "2026-10-08",
+      "voteAverage": 8.2,
+      "cast": [
+        {
+          "name": "Óscar Barberán",
+          "character": "Tadeo Jones (voice)",
+          "profilePath": "/3Knf7YGrqS8sfXNPo7k15TIJe92.jpg"
+        },
+        {
+          "name": "Michelle Jenner",
+          "character": "Sara Lavrof (voice)",
+          "profilePath": "/g3JyHqwBcV7g1ds3dHtWkDXyXqb.jpg"
+        },
+        {
+          "name": "Luis Posada",
+          "character": "Momia (voice)",
+          "profilePath": "/2Z0FesGz5NIQYbKz8hUxZxSrjUs.jpg"
+        },
+        {
+          "name": "Joseph Balderrama",
+          "character": "Mummy / Tupac (voice)",
+          "profilePath": "/8BwRFsXzWD25dPih6IePcRD3EjT.jpg"
+        },
+        {
+          "name": "Trevor White",
+          "character": "Tad (voice)",
+          "profilePath": "/hqSsJnshRL3rydOrE2coMXRWufP.jpg"
+        }
+      ],
+      "director": "Enrique Gato",
+      "trailerYouTubeKey": "8-Bjo_rXCkM",
+      "status": "now"
+    },
+    {
+      "id": 1503762,
+      "slug": "razao-e-sensibilidade",
+      "title": "Razão e Sensibilidade",
+      "originalTitle": "Sense and Sensibility",
+      "overview": "Uma nova e irresistível releitura do icônico romance “Razão e Sensibilidade”, de Jane Austen: uma história encantadora, espirituosa e com a qual é fácil se identificar, sobre amor e irmandade.",
+      "posterPath": "/kuSSXcjitZy1LLGGoB9XqLBPCYl.jpg",
+      "backdropPath": "/tIcONOFK9D3F89ETK8DBS1hIwVF.jpg",
+      "runtime": 125,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "certification": "10",
+      "releaseDate": "2026-10-15",
+      "voteAverage": 7.3,
+      "cast": [
+        {
+          "name": "Daisy Edgar-Jones",
+          "character": "Elinor Dashwood",
+          "profilePath": "/4Fdc3VSoVhkkEZNx5Zpz3AU6DYz.jpg"
+        },
+        {
+          "name": "Esmé Creed-Miles",
+          "character": "Marianne Dashwood",
+          "profilePath": "/hmGkEC4OWsyDe7ZGVkZ7e1RjViD.jpg"
+        },
+        {
+          "name": "Caitríona Balfe",
+          "character": "Mrs. Dashwood",
+          "profilePath": "/lerCNTjO6FQIam2lF5SXHA4dY7H.jpg"
+        },
+        {
+          "name": "Frank Dillane",
+          "character": "John Willoughby",
+          "profilePath": "/eitUc8e045y8dDfBSm681hU471g.jpg"
+        },
+        {
+          "name": "Herbert Nordrum",
+          "character": "Colonel Brandon",
+          "profilePath": "/wMT9o2WNfLGE4dD8Rkt2Rem4Ljt.jpg"
+        },
+        {
+          "name": "George MacKay",
+          "character": "Edward Ferrars",
+          "profilePath": "/wnDAg1CyCbBCklQAZ9I1dj5X6QY.jpg"
+        }
+      ],
+      "director": "Georgia Oakley",
+      "trailerYouTubeKey": "OFLyW0lxFU0",
+      "status": "now"
+    },
+    {
+      "id": 1284046,
+      "slug": "protocolo-de-exterminio",
+      "title": "Protocolo de Extermínio",
+      "originalTitle": "Onslaught",
+      "overview": "Uma sniper precisa lutar sozinha contra um esquadrão de soldados geneticamente modificados no meio do deserto para salvar sua filha pequena.",
+      "posterPath": "/S8yJg9VlcDRB55CFIBAF7V2lZ3.jpg",
+      "backdropPath": "/pmPXXniQlb4EdYY0gVZO90rf54F.jpg",
+      "runtime": 92,
+      "genres": [
+        "Ação",
+        "Thriller",
+        "Terror"
+      ],
+      "certification": "18",
+      "releaseDate": "2026-10-01",
+      "voteAverage": 5.6,
+      "cast": [
+        {
+          "name": "Adria Arjona",
+          "character": "Celeste",
+          "profilePath": "/hzu7OqTmNCT1xdCdmwBSf2yJvaO.jpg"
+        },
+        {
+          "name": "Dan Stevens",
+          "character": "Hans Kammler",
+          "profilePath": "/fFsgginZKH527o38ZfdDxuzx7Ew.jpg"
+        },
+        {
+          "name": "Eric Wareheim",
+          "character": "Kovacks",
+          "profilePath": "/x9STTsfrnC7SnuHuRczPFbGi6xp.jpg"
+        },
+        {
+          "name": "Reginald VelJohnson",
+          "character": "Josiah",
+          "profilePath": "/dZtIIOI0PpD3dmTVfUOWiQzOY28.jpg"
+        },
+        {
+          "name": "Michael Biehn",
+          "character": "Baylor",
+          "profilePath": "/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"
+        },
+        {
+          "name": "Blake Kennedy",
+          "character": "Daisy",
+          "profilePath": "/uHyvjWY6oQ9gs9zzpcLYMS0nF9D.jpg"
+        }
+      ],
+      "director": "Adam Wingard",
+      "trailerYouTubeKey": "AMLCbpM1fRQ",
+      "status": "now"
+    },
+    {
+      "id": 1244523,
+      "slug": "boiuna-terror-no-amazonas",
+      "title": "Boiúna : Terror no Amazonas",
+      "originalTitle": "Beware Boiúna",
+      "overview": "Um grupo de jovens médicos embarca em missão humanitária na Amazônia, cada um com seus próprios interesses ocultos. No entanto, nem todos recebem bem a chegada do grupo, e a visita deles desperta um predador ancestral: a Boiúna. A criatura mítica retorna para defender seu território. Em meio à selva densa, trava-se uma luta pela sobrevivência, e as fronteiras entre caçador e presa, herói e vilão, tornam-se cada vez mais tênues.",
+      "posterPath": "/r2HKWQ4kCQsEEsCAQGn5qsl4H29.jpg",
+      "backdropPath": "/9nU0FKNefmhbgi2xXlvZchZsqwm.jpg",
+      "runtime": 103,
+      "genres": [
+        "Terror",
+        "Thriller",
+        "Ação"
+      ],
+      "certification": "AD",
+      "releaseDate": "2026-11-12",
+      "voteAverage": 6.2,
+      "cast": [
+        {
+          "name": "Kiana Madeira",
+          "character": "Lena",
+          "profilePath": "/sw5jTOmdHhAZzVMIzSVEDi5g7lz.jpg"
+        },
+        {
+          "name": "Jessica Rothe",
+          "character": "Alli",
+          "profilePath": "/oItPXy56W0Y5taqIMZilRtnPDMn.jpg"
+        },
+        {
+          "name": "Will Close",
+          "character": "Callum",
+          "profilePath": "/lgsHBbNrY8SEdsOIQEEXMOSqTgY.jpg"
+        },
+        {
+          "name": "Juan Pablo Shuk",
+          "character": "Miguel",
+          "profilePath": "/bUJgufFSqWMpa8gEXPTNun8MP8i.jpg"
+        },
+        {
+          "name": "Logan Marshall-Green",
+          "character": "Brennan",
+          "profilePath": "/oogXh2Osxw43bfjMVCcCH8SGsUB.jpg"
+        },
+        {
+          "name": "Jaime Newball",
+          "character": "Raúl",
+          "profilePath": null
+        }
+      ],
+      "director": "Mike P. Nelson",
+      "trailerYouTubeKey": "MQKqgFVU4dQ",
+      "status": "soon"
+    },
+    {
+      "id": 656908,
+      "slug": "ramayana-o-nascimento-de-uma-lenda",
+      "title": "Ramayana: O Nascimento de uma Lenda",
+      "originalTitle": "रामायणम्",
+      "overview": "Rama é um príncipe cujo destino é marcado pelo sacrifício, enquanto Ravana é um rei imortal movido pela vingança. Uma profecia une os destinos dos dois.",
+      "posterPath": "/lV7b3n4tqwlKGUsl72r3fI7COH1.jpg",
+      "backdropPath": "/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
+      "runtime": 201,
+      "genres": [
+        "Fantasia",
+        "Ação",
+        "Aventura"
+      ],
+      "certification": "AD",
+      "releaseDate": "2026-11-19",
+      "voteAverage": 7.7,
+      "cast": [
+        {
+          "name": "Yash",
+          "character": "Ravana",
+          "profilePath": "/es8St0vl9otL1XAAZJKYmNpL3Wy.jpg"
+        },
+        {
+          "name": "Sai Pallavi",
+          "character": "Sita",
+          "profilePath": "/qAPdGKUIUEzLibdgVCey7oKvvME.jpg"
+        },
+        {
+          "name": "Ravi Dubey",
+          "character": "Lakshmana",
+          "profilePath": "/dUhZ0E8nchBkjYV0okWfj4BLxy2.jpg"
+        },
+        {
+          "name": "Lara Dutta Bhupathi",
+          "character": "Kaikeyi",
+          "profilePath": "/tt0qUlMx7tlDa8XyhBm6OQPurG0.jpg"
+        },
+        {
+          "name": "Rakul Preet Singh",
+          "character": "Surpanakha",
+          "profilePath": "/4n4MmOFNyxKc4qMfzyapglvDDlF.jpg"
+        }
+      ],
+      "director": "Nitesh Tiwari",
+      "trailerYouTubeKey": "AYkPRN874m8",
+      "status": "soon"
+    },
+    {
+      "id": 1232569,
+      "slug": "pinoquio-maldicao-de-madeira",
+      "title": "Pinóquio: Maldição de Madeira",
+      "originalTitle": "Pinocchio: Unstrung",
+      "overview": "O boneco de madeira Pinóquio é trazido à vida por forças macabras. Distante da inocência original, sua jornada para se tornar um menino de verdade é marcada por violência e vingança. À medida que Pinóquio persegue brutalmente aqueles que cruzam seu caminho, antigos laços familiares são distorcidos em horrores impensáveis.",
+      "posterPath": "/wgO649swkzsI58q3ikpxYNvkwv7.jpg",
+      "backdropPath": "/7RsPdXLDNugDIlwXPVeeprNfMx.jpg",
+      "runtime": 81,
+      "genres": [
+        "Terror",
+        "Fantasia",
+        "Mistério"
+      ],
+      "certification": "18",
+      "releaseDate": "2026-11-12",
+      "voteAverage": 6.4,
+      "cast": [
+        {
+          "name": "Jude Evan Lloyd",
+          "character": "Pinocchio (voice)",
+          "profilePath": "/5lcnZuR8L3W64DOICg9h5VE6uW4.jpg"
+        },
+        {
+          "name": "Cameron Bell",
+          "character": "James",
+          "profilePath": "/mjSipiIUJFqhdjmBdtttsmZGgx1.jpg"
+        },
+        {
+          "name": "Richard Brake",
+          "character": "Geppetto",
+          "profilePath": "/JwsiErANShzPSdYsNoiNYdrSg1.jpg"
+        },
+        {
+          "name": "Jessica Balmer",
+          "character": "Mia",
+          "profilePath": "/fhb5Oj719yH7z5f2lYU2r8Lyu46.jpg"
+        },
+        {
+          "name": "Jack Art Gray",
+          "character": "Dudley",
+          "profilePath": "/pysea7rtgJOHRv77WXD1RNHkWku.jpg"
+        },
+        {
+          "name": "Robert Englund",
+          "character": "Cricket (voice)",
+          "profilePath": "/cjGEkiavinHa1dnetDvnEhlD2Wm.jpg"
+        }
+      ],
+      "director": "Rhys Frake-Waterfield",
+      "trailerYouTubeKey": "Y4lZewE6JMI",
+      "status": "soon"
+    },
+    {
+      "id": 1765072,
+      "slug": "tudo-pode-ser-visto",
+      "title": "Tudo Pode Ser Visto",
+      "originalTitle": "You Can See Everything",
+      "overview": "Trinta e quatro dias antes de ser enviada para a prisão, a notória fundadora do Vale do Silício, Elizabeth Holmes, convida uma equipe de filmagem cética para documentar cada passo seu. O que começa como um retrato íntimo de uma criminosa enigmática se transforma em uma jornada alucinante de três anos rumo ao abismo.",
+      "posterPath": "/mnu5cNfijdbuU4iWrV2Lg7AfM0J.jpg",
+      "backdropPath": "/nhIL3O4W9h5V5JbNQm7yjoDk3So.jpg",
+      "runtime": 174,
+      "genres": [
+        "Documentário"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-11-26",
+      "voteAverage": 8.9,
+      "cast": [
+        {
+          "name": "Elizabeth Holmes",
+          "character": "Self",
+          "profilePath": "/s7ej8dZ7zncd4nPBrkBUbArnTJl.jpg"
+        },
+        {
+          "name": "Nathan Fielder",
+          "character": "Self",
+          "profilePath": "/x0UOcjml8WnBfnb89QOh0iXM0w0.jpg"
+        },
+        {
+          "name": "Billy Evans",
+          "character": "Self",
+          "profilePath": "/tLOCcMkylvIES7ZKFv6Dks6XmD.jpg"
+        },
+        {
+          "name": "Amanda Seyfried",
+          "character": "Self / Elizabeth Holmes",
+          "profilePath": "/gtBUIpZ3dvLpOMIVORxE6sHSyZj.jpg"
+        },
+        {
+          "name": "Christopher Abbott",
+          "character": "Billy Evans",
+          "profilePath": "/bE7zzh60RXydH3p632ZZSmsTlcn.jpg"
+        },
+        {
+          "name": "Lance Oppenheim",
+          "character": "Self",
+          "profilePath": "/h12zgCaZ24imkZlw0nry9T9mjGD.jpg"
+        }
+      ],
+      "director": "Nathan Fielder",
+      "trailerYouTubeKey": "IEx8D1Wb__U",
+      "status": "soon"
+    },
+    {
+      "id": 1300968,
+      "slug": "jogos-vorazes-amanhecer-na-colheita",
+      "title": "Jogos Vorazes: Amanhecer na Colheita",
+      "originalTitle": "The Hunger Games: Sunrise on the Reaping",
+      "overview": "Revisite o mundo de Panem 24 anos antes dos eventos de Jogos Vorazes, começando na manhã da colheita dos 50º Jogos Vorazes, também conhecida como o Segundo Massacre Quaternário.",
+      "posterPath": "/ibZ6GSHtCeC7fLDJ2uyXNemgYwr.jpg",
+      "backdropPath": "/aqFZcr2dxSZ2UwWSo1WC6C0rwDf.jpg",
+      "runtime": 158,
+      "genres": [
+        "Ficção científica",
+        "Ação",
+        "Aventura"
+      ],
+      "certification": "16",
+      "releaseDate": "2026-11-19",
+      "voteAverage": 0,
+      "cast": [
+        {
+          "name": "Joseph Zada",
+          "character": "Haymitch Abernathy",
+          "profilePath": "/8RnNxrgffoNOu7ZHPSGvYnfjtdI.jpg"
+        },
+        {
+          "name": "Mckenna Grace",
+          "character": "Maysilee Donner / Merrilee Donner",
+          "profilePath": "/sK0CVa56IIpFhCDrcXSTqPWxNbx.jpg"
+        },
+        {
+          "name": "Ralph Fiennes",
+          "character": "President Coriolanus Snow",
+          "profilePath": "/tJr9GcmGNHhLVVEH3i7QYbj6hBi.jpg"
+        },
+        {
+          "name": "Jesse Plemons",
+          "character": "Plutarch Heavensbee",
+          "profilePath": "/og4I51GsuwohdPgoELOHVMMqMre.jpg"
+        },
+        {
+          "name": "Glenn Close",
+          "character": "Drusilla Sickle",
+          "profilePath": "/4VHZ1GfLwN7MUgApy0LCBzdDF9L.jpg"
+        },
+        {
+          "name": "Whitney Peak",
+          "character": "Lenore Dove Baird",
+          "profilePath": "/nDJQufvXG9ojYV1dQi51TnG9h6K.jpg"
+        }
+      ],
+      "director": "Francis Lawrence",
+      "trailerYouTubeKey": "0x0wH_B1X7k",
+      "status": "soon"
+    },
+    {
+      "id": 1567605,
+      "slug": "ebenezer-e-os-fantasmas-do-natal",
+      "title": "Ebenezer e os Fantasmas do Natal",
+      "originalTitle": "Ebenezer",
+      "overview": "Ebenezer Scrooge é um velho avarento que recebe a visita do fantasma de seu antigo sócio, Jacob Marley, e dos Espíritos do Natal Passado, Presente e Futuro. Os encontros o força a confrontar o próprio passado e a lutar por uma segunda chance de ser feliz.",
+      "posterPath": "/7MBeM27NNcCYUszjTNYJUycPDhV.jpg",
+      "backdropPath": "/oveb9ughaDh4GkjmVHvSgFnEzlM.jpg",
+      "runtime": 115,
+      "genres": [
+        "Fantasia",
+        "Comédia"
+      ],
+      "certification": "AD",
+      "releaseDate": "2026-11-12",
+      "voteAverage": 7,
+      "cast": [
+        {
+          "name": "Johnny Depp",
+          "character": "Ebenezer Scrooge",
+          "profilePath": "/k2xt6EUxQDwYRKIyI4IBdZxfs8n.jpg"
+        },
+        {
+          "name": "Rupert Grint",
+          "character": "Bob Cratchit",
+          "profilePath": "/iFlkpTaOF6fGLqxz8b0PhI0i0zN.jpg"
+        },
+        {
+          "name": "Daisy Ridley",
+          "character": "Emily Cratchit",
+          "profilePath": "/A8QZBHZjlbWDiUXBvCTk4Zv5oBs.jpg"
+        },
+        {
+          "name": "Sam Claflin",
+          "character": "Fred",
+          "profilePath": "/e5CU4tjCNZFfm7ITmZfzjZse2Bb.jpg"
+        },
+        {
+          "name": "Tramell Tillman",
+          "character": "Ghost of Christmas Present",
+          "profilePath": "/bEA15zMnkcXlRroYjKrFUWiiK7y.jpg"
+        },
+        {
+          "name": "Ian McKellen",
+          "character": "Jacob Marley",
+          "profilePath": "/5cnnnpnJG6TiYUSS7qgJheUZgnv.jpg"
+        }
+      ],
+      "director": "Ti West",
+      "trailerYouTubeKey": "l_Ozo1xUgbU",
+      "status": "soon"
+    },
+    {
+      "id": 1564614,
+      "slug": "leviticus-ritual-de-sangue",
+      "title": "Leviticus: Ritual de Sangue",
+      "originalTitle": "Leviticus",
+      "overview": "Dois adolescentes precisam escapar de um monstro violento capaz de se transformar na pessoa que a vítima mais deseja no mundo. Por estarem apaixonados, a criatura assume a aparência de um para atrair o outro, transformando o afeto em uma armadilha de sobrevivência.",
+      "posterPath": "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg",
+      "backdropPath": "/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
+      "runtime": 88,
+      "genres": [
+        "Terror",
+        "Romance"
+      ],
+      "certification": "14",
+      "releaseDate": "2026-11-26",
+      "voteAverage": 6.8,
+      "cast": [
+        {
+          "name": "Joe Bird",
+          "character": "Naim Reid",
+          "profilePath": "/qUzFtIQFW1wUJC76VqMSVGy9QNb.jpg"
+        },
+        {
+          "name": "Stacy Clausen",
+          "character": "Ryan Whelan",
+          "profilePath": "/8zwuEGXi26Yg9FQ29MntI5tWRk2.jpg"
+        },
+        {
+          "name": "Mia Wasikowska",
+          "character": "Arlene Reid",
+          "profilePath": "/e3tgrIryp5wTFbDbDdfjxd8012m.jpg"
+        },
+        {
+          "name": "Nicholas Hope",
+          "character": "Deliverance Healer",
+          "profilePath": "/jwl6mahxUgnLvaCfmKiQLN9M2f6.jpg"
+        },
+        {
+          "name": "Tyallah Bullock",
+          "character": "Marnie",
+          "profilePath": "/ae680Po4jGoAS3fUebpYKfQvjvn.jpg"
+        },
+        {
+          "name": "Ewen Leslie",
+          "character": "Rod",
+          "profilePath": "/mANm2VxOszTc4bkzBsxZpAB056c.jpg"
+        }
+      ],
+      "director": "Adrian Chiarella",
+      "trailerYouTubeKey": "WXuK0vlFxII",
+      "status": "soon"
+    },
+    {
+      "id": 1511171,
+      "slug": "a-virada-ignicao-da-alma",
+      "title": "A Virada: Ignição da Alma",
+      "originalTitle": "A Virada: Ignição da Alma",
+      "overview": "Noah Silva é um vendedor de carros usados carismático, cuja vida começa a desmoronar após sua postura “a qualquer custo” cobrar um preço alto em casa e no trabalho. Confrontado por uma série de alertas, ele embarca em uma jornada de reconciliação e transformação pessoal, na tentativa de recuperar sua integridade e reconstruir a relação com sua esposa e seu filho.",
+      "posterPath": "/c4MLyvjowk8tCYmukhl1DFotuky.jpg",
+      "backdropPath": "/wtQXsHvBhlBTtytjEmopEmts78c.jpg",
+      "runtime": 123,
+      "genres": [
+        "Drama"
+      ],
+      "certification": "10",
+      "releaseDate": "2026-11-12",
+      "voteAverage": 0,
+      "cast": [
+        {
+          "name": "Mário Bregieira",
+          "character": "Noah Souza",
+          "profilePath": "/fOu8Qvlaf27kmlRGWbtskFS8ARI.jpg"
+        },
+        {
+          "name": "Pérola Faria",
+          "character": "Ana",
+          "profilePath": "/ioqfQSuygTQ5bbnIFRUmM1xgSTR.jpg"
+        },
+        {
+          "name": "Felipe Folgosi",
+          "character": "Gérson",
+          "profilePath": "/rXAibfzgeDTS9B9Z5iG5YXfILlp.jpg"
+        },
+        {
+          "name": "Alex Kendrick",
+          "character": "Paul",
+          "profilePath": "/9n7UKpTp7KNjL2qm2k0qAOuiNCC.jpg"
+        },
+        {
+          "name": "Adriano Canindé",
+          "character": "Douglas",
+          "profilePath": "/pifbJLh8rJaB7wwzdBfUoNaC7EU.jpg"
+        },
+        {
+          "name": "Guilherme Tavares",
+          "character": "Davi",
+          "profilePath": "/hKgQ6QIckgEO3zrQq7KXlJ4PhlW.jpg"
+        }
+      ],
+      "director": "Alessandro Barros",
+      "trailerYouTubeKey": null,
+      "status": "soon"
+    }
+  ]
+}

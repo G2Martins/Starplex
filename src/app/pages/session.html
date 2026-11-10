@@ -1,0 +1,246 @@
+@if (session(); as s) {
+  <!-- ============ FLOW HEADER ============ -->
+  <section class="border-b border-line bg-[#0d0a17]">
+    <div class="wrap py-6">
+      <a class="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-2 hover:text-ink" [routerLink]="['/filmes', s.movie.slug]">
+        <app-icon name="arrow-left" [size]="14" />Voltar ao filme
+      </a>
+      <div class="mt-4 flex flex-wrap items-center gap-4">
+        <div class="w-12 shrink-0 overflow-hidden rounded-[7px] border border-line"><app-poster [movie]="s.movie" sizes="48px" kind="thumb" /></div>
+        <div class="min-w-0 flex-1 basis-[calc(100%-4rem)] sm:basis-auto">
+          <h1 class="flex items-center gap-2.5 text-xl font-medium tracking-tight sm:text-2xl">
+            <span class="truncate">{{ s.movie.title }}</span><app-cert [value]="s.movie.certification" />
+          </h1>
+          <p class="mt-0.5 text-[13px] text-ink-2">
+            {{ s.cinema.name }} · Sala {{ s.room.no }} · <span class="font-mono">{{ s.room.format }} {{ s.lang === 'DUB' ? 'Dublado' : 'Legendado' }}</span> · {{ pretty(s.date) }}, <span class="font-mono text-ink">{{ s.time }}</span>
+          </p>
+        </div>
+        @if (step() < 4) {
+          <p class="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[13px]"
+             [class]="remaining() < 60000 ? 'border-danger/60 text-danger' : 'border-line text-ink'" role="timer"
+             [attr.aria-label]="'Tempo restante da reserva: ' + clock()">
+            <app-icon name="clock" [size]="15" /><span class="text-[11px] uppercase tracking-[0.12em] text-ink-2">Reserva</span>{{ clock() }}
+          </p>
+        }
+      </div>
+
+      <ol class="no-bar mt-6 flex gap-4 overflow-x-auto sm:gap-8" aria-label="Etapas da compra">
+        @for (label of steps; track label; let i = $index) {
+          <li class="flex shrink-0 items-center gap-2 text-[13px]" [class]="i === step() ? 'text-ink' : i < step() ? 'text-ink-2' : 'text-dim'"
+              [attr.aria-current]="i === step() ? 'step' : null">
+            <span class="grid size-6 place-items-center rounded-full border font-mono text-[11px]"
+                  [class]="i === step() ? 'border-accent bg-accent text-on-accent' : i < step() ? 'border-accent/60 text-accent-ink' : 'border-line'">
+              @if (i < step()) { <app-icon name="check" [size]="12" /> } @else { {{ i + 1 }} }
+            </span>
+            <span [class]="i === step() ? '' : 'max-sm:sr-only'">{{ label }}</span>
+          </li>
+        }
+      </ol>
+      <div class="mt-4 h-px bg-line"><div class="h-px origin-left bg-accent transition-transform duration-700 ease-out-expo" [style.transform]="'scaleX(' + (step() + 1) / steps.length + ')'"></div></div>
+    </div>
+  </section>
+
+  @if (started()) {
+    <section class="wrap py-16 text-center">
+      <p class="eyebrow">Sessão encerrada</p>
+      <h2 class="h2 mt-3 text-3xl">Esta sessão já começou</h2>
+      <p class="mt-3 text-ink-2">Escolha outro horário para continuar.</p>
+      <a class="btn btn-primary mt-8" [routerLink]="['/filmes', s.movie.slug]" fragment="sessoes">Ver outras sessões</a>
+    </section>
+  } @else if (step() === 4 && order()) {
+    @let o = order()!;
+    <!-- ============ 5. CONFIRMAÇÃO ============ -->
+    <section class="wrap max-w-3xl py-12">
+      <div class="materialize text-center">
+        <span class="mx-auto grid size-14 place-items-center rounded-full bg-ok/15 text-ok"><app-icon name="check" [size]="28" /></span>
+        <p class="eyebrow mt-6 justify-center">Pedido {{ o.code }}</p>
+        <h2 class="h-display mt-3 text-4xl sm:text-5xl">Compra <span class="grad">confirmada</span></h2>
+        <p class="mx-auto mt-3 max-w-md text-ink-2">Seus ingressos foram salvos em Meus ingressos neste navegador. Compra simulada: nenhum valor foi cobrado.</p>
+      </div>
+      <div class="materialize mt-10" style="animation-delay: 150ms"><app-ticket [order]="o" /></div>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a class="btn btn-primary" routerLink="/meus-ingressos"><app-icon name="ticket" [size]="18" />Ver meus ingressos</a>
+        <a class="btn btn-line" routerLink="/">Voltar para filmes</a>
+      </div>
+    </section>
+  } @else {
+    <div class="wrap grid grid-cols-1 gap-8 pb-28 pt-8 lg:grid-cols-[minmax(0,1fr)_21rem] lg:pb-12">
+      <div class="min-w-0">
+        @switch (step()) {
+          <!-- ============ 1. ASSENTOS ============ -->
+          @case (0) {
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 class="text-lg font-medium tracking-tight">Escolha seus assentos</h2>
+              <p class="text-[13px] text-ink-2">Até {{ max }} por compra · {{ brl(price()) }} a inteira</p>
+            </div>
+            <div class="panel dotgrid mt-4 overflow-hidden">
+              <div #scroller class="scroll-x px-4 pb-6 pt-2 sm:px-6">
+                <div class="mx-auto" [style.min-width.px]="cols() * 30 + 56" [style.max-width.px]="cols() * 44 + 56" (keydown)="nav($event)">
+                  <div class="screen-glow relative h-20" aria-hidden="true">
+                    <svg viewBox="0 0 400 40" preserveAspectRatio="none" class="absolute inset-x-[6%] top-3 h-8 w-[88%]">
+                      <path d="M4 34Q200 -4 396 34" fill="none" stroke="#ffd4ad" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+                    </svg>
+                    <p class="absolute inset-x-0 top-11 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-ink-2">Tela</p>
+                  </div>
+                  <div class="grid gap-[5px]">
+                    @for (row of rows(); track row.letter; let ri = $index) {
+                      <div class="grid items-center gap-[4px]" role="group" [attr.aria-label]="'Fileira ' + row.letter"
+                           [style.grid-template-columns]="'1.25rem repeat(' + cols() + ', minmax(0, 1fr)) 1.25rem'">
+                        <span class="text-center font-mono text-[10px] text-ink-2" aria-hidden="true">{{ row.letter }}</span>
+                        @for (seat of row.cells; track $index; let ci = $index) {
+                          @if (seat) {
+                            <button type="button" class="seat" [attr.data-t]="seat.type" [attr.data-side]="seat.side ?? null"
+                                    [attr.data-r]="ri" [attr.data-c]="ci" [disabled]="seat.occupied" [attr.aria-pressed]="isOn(seat.id)"
+                                    [attr.aria-label]="aria(seat)" [attr.title]="seat.id" (click)="toggle(seat)">
+                              @if (isOn(seat.id)) {
+                                <span class="font-mono text-[9px] font-semibold">{{ seat.num }}</span>
+                              } @else if (seat.type === 'd') {
+                                <app-icon name="wheelchair" [size]="12" />
+                              } @else if (seat.type === 'a') {
+                                <span class="font-mono text-[9px]">A</span>
+                              }
+                            </button>
+                          } @else {
+                            <span></span>
+                          }
+                        }
+                        <span class="text-center font-mono text-[10px] text-ink-2" aria-hidden="true">{{ row.letter }}</span>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-3 text-[12px] text-ink-2" aria-label="Legenda">
+              <li class="flex items-center gap-2"><span class="seat !w-4" aria-hidden="true"></span>Disponível</li>
+              <li class="flex items-center gap-2"><span class="seat is-on !w-4 !scale-100" aria-hidden="true"></span>Selecionado</li>
+              <li class="flex items-center gap-2"><span class="seat is-off !w-4" aria-hidden="true"></span>Ocupado</li>
+              @if (types().includes('d')) { <li class="flex items-center gap-2"><span class="seat !w-4" data-t="d" aria-hidden="true"></span>PCD e acompanhante</li> }
+              @if (types().includes('c')) { <li class="flex items-center gap-2"><span class="seat !w-4" data-t="c" aria-hidden="true"></span>Namoradeira (par)</li> }
+              @if (types().includes('v')) { <li class="flex items-center gap-2"><span class="seat !w-4" data-t="v" aria-hidden="true"></span>VIP reclinável</li> }
+            </ul>
+            <p class="mt-3 text-[12px] text-ink-2"><span class="sm:hidden">Deslize o mapa para os lados para ver a sala inteira.</span><span class="max-sm:hidden">Dica: use as setas do teclado para navegar entre os assentos.</span></p>
+          }
+
+          <!-- ============ 2. INGRESSOS ============ -->
+          @case (1) {
+            <h2 class="text-lg font-medium tracking-tight">Tipo de ingresso</h2>
+            <p class="mt-1 text-[14px] text-ink-2">Escolha inteira ou meia-entrada para cada assento.</p>
+            <div class="mt-5 grid gap-3">
+              @for (t of tickets(); track t.seat) {
+                <fieldset class="panel flex flex-wrap items-center justify-between gap-3 px-4 py-3.5">
+                  <legend class="sr-only">Ingresso do assento {{ t.seat }}</legend>
+                  <p class="flex items-baseline gap-3"><span class="font-mono text-lg text-accent-ink">{{ t.seat }}</span></p>
+                  <div class="flex gap-2">
+                    <label class="pill cursor-pointer">
+                      <input class="sr-only" type="radio" [name]="'tipo-' + t.seat" [checked]="t.type === 'inteira'" (change)="setType(t.seat, 'inteira')" />
+                      Inteira <span class="font-mono">{{ brl(price()) }}</span>
+                    </label>
+                    <label class="pill cursor-pointer">
+                      <input class="sr-only" type="radio" [name]="'tipo-' + t.seat" [checked]="t.type === 'meia'" (change)="setType(t.seat, 'meia')" />
+                      Meia <span class="font-mono">{{ brl(price() / 2) }}</span>
+                    </label>
+                  </div>
+                </fieldset>
+              }
+            </div>
+            <p class="mt-5 flex gap-2.5 rounded-[11px] border border-line bg-well px-4 py-3 text-[13px] text-ink-2">
+              <app-icon name="info" [size]="18" class="text-accent-ink" />
+              <span>Meia-entrada: apresente documento comprobatório na entrada da sala (estudantes, pessoas com 60 anos ou mais, pessoas com deficiência e jovens de baixa renda, Lei 12.933/2013).</span>
+            </p>
+            @if (hasPcd()) {
+              <p class="mt-3 flex gap-2.5 rounded-[11px] border border-[#5b8cff]/40 bg-[#5b8cff]/10 px-4 py-3 text-[13px] text-ink-2">
+                <app-icon name="wheelchair" [size]="18" class="text-[#8fb0ff]" />
+                <span>Assentos PCD e de acompanhante são reservados para pessoas com deficiência ou mobilidade reduzida.</span>
+              </p>
+            }
+          }
+
+          <!-- ============ 3. BOMBONIERE ============ -->
+          @case (2) {
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 class="text-lg font-medium tracking-tight">Bomboniere</h2>
+              <p class="text-[13px] text-ink-2">Opcional · retire no balcão expresso</p>
+            </div>
+            <app-snack-list class="mt-4" [cols]="2" />
+          }
+
+          <!-- ============ 4. PAGAMENTO ============ -->
+          @case (3) {
+            <h2 class="sr-only">Pagamento</h2>
+            <app-pay [total]="total()" [seed]="s.id" (paid)="paid()" />
+          }
+        }
+      </div>
+
+      <!-- ============ RESUMO ============ -->
+      <aside class="h-fit lg:sticky lg:top-24" aria-label="Resumo do pedido">
+        <div class="card p-5">
+          <p class="eyebrow">Resumo</p>
+          @if (selected().length) {
+            @if (step() === 0) {
+              <p class="mt-4 font-mono text-[13px] text-accent-ink">{{ selected().join(' · ') }}</p>
+              <p class="mt-4 flex items-baseline justify-between border-t border-line pt-4">
+                <span class="text-[14px] text-ink-2">{{ selected().length }} {{ selected().length === 1 ? 'assento' : 'assentos' }}</span>
+                <span class="text-xl font-medium tracking-tight">{{ brl(total()) }}</span>
+              </p>
+              <p class="mt-1 text-right text-[11px] text-ink-2">Inclui taxa de serviço de {{ brl(fee) }} por ingresso</p>
+            } @else {
+              <app-order-lines class="mt-4" [tickets]="tickets()" [snacks]="step() >= 2 ? store.cartLines() : []" [fees]="fees()" />
+            }
+          } @else {
+            <p class="mt-4 text-[14px] text-ink-2">Nenhum assento selecionado. Toque nos assentos livres no mapa da sala.</p>
+          }
+          @if (notice()) { <p class="mt-3 text-[13px] text-danger" role="alert">{{ notice() }}</p> }
+
+          @if (step() < 3) {
+            <div class="mt-5 hidden gap-2 lg:grid">
+              <button type="button" class="btn btn-primary w-full" [disabled]="!selected().length" (click)="go(step() + 1)">
+                {{ step() === 2 ? (store.cartCount() ? 'Ir para pagamento' : 'Pular e ir para pagamento') : 'Continuar' }}<app-icon name="arrow-right" [size]="16" />
+              </button>
+              @if (step() > 0) { <button type="button" class="btn btn-ghost w-full" (click)="go(step() - 1)"><app-icon name="arrow-left" [size]="16" />Voltar</button> }
+            </div>
+          } @else {
+            <button type="button" class="btn btn-ghost mt-4 w-full" (click)="go(2)"><app-icon name="arrow-left" [size]="16" />Voltar</button>
+          }
+        </div>
+      </aside>
+    </div>
+
+    <!-- Mobile action bar -->
+    @if (step() < 3) {
+      <div class="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/95 backdrop-blur-md lg:hidden">
+        <div class="wrap flex items-center gap-3 py-3">
+          @if (step() > 0) {
+            <button type="button" class="icon-btn shrink-0 border border-line" aria-label="Voltar" (click)="go(step() - 1)"><app-icon name="arrow-left" [size]="18" /></button>
+          }
+          <div class="min-w-0 flex-1">
+            <p class="truncate font-mono text-[11px] text-ink-2">{{ selected().length ? selected().join(' · ') : 'Escolha seus assentos' }}</p>
+            <p class="text-[16px] font-medium">{{ brl(total()) }}</p>
+          </div>
+          <button type="button" class="btn btn-primary" [disabled]="!selected().length" (click)="go(step() + 1)">
+            {{ step() === 2 ? 'Pagamento' : 'Continuar' }}<app-icon name="arrow-right" [size]="16" />
+          </button>
+        </div>
+      </div>
+    }
+
+    @if (expired()) {
+      <div class="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4" role="alertdialog" aria-modal="true" aria-labelledby="exp-t">
+        <div class="card materialize max-w-sm p-7 text-center">
+          <span class="mx-auto grid size-12 place-items-center rounded-full bg-danger/15 text-danger"><app-icon name="clock" [size]="24" /></span>
+          <h2 id="exp-t" class="mt-5 text-xl font-medium tracking-tight">Tempo esgotado</h2>
+          <p class="mt-2 text-[14px] text-ink-2">A reserva de 10 minutos terminou e os assentos foram liberados.</p>
+          <button type="button" class="btn btn-primary mt-6 w-full" (click)="fresh(true)">Escolher novamente</button>
+        </div>
+      </div>
+    }
+  }
+} @else {
+  <section class="wrap py-24 text-center">
+    <p class="eyebrow">Sessão indisponível</p>
+    <h1 class="h-display mt-4 text-5xl">Sessão não encontrada</h1>
+    <p class="mt-4 text-ink-2">O link pode ter expirado. Escolha um filme e um horário na programação.</p>
+    <a class="btn btn-primary mt-8" routerLink="/">Ver filmes em cartaz</a>
+  </section>
+}
