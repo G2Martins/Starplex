@@ -3,8 +3,9 @@
 import data from './movies.json' with { type: 'json' };
 
 export const SITE_URL = 'https://g2martins.github.io/Starplex';
-export const PORTFOLIO_URL = 'https://g2portfolio.grovicdata.com';
-export const PROJECT_URL = `${PORTFOLIO_URL}/projetos/starplex`;
+// Trailing slashes: the portfolio is on GitHub Pages, where /path answers with a 301 to /path/.
+export const PORTFOLIO_URL = 'https://g2portfolio.grovicdata.com/';
+export const PROJECT_URL = `${PORTFOLIO_URL}projetos/starplex/`;
 export const REPO_URL = 'https://github.com/G2Martins/Starplex';
 export const AUTHOR = 'Gustavo Martins Gripaldi';
 
@@ -19,7 +20,10 @@ export interface Movie {
   originalTitle: string;
   overview: string;
   posterPath: string | null;
+  /** Self-hosted key (public/img/backdrops) or a TMDB path. */
   backdropPath: string | null;
+  /** Original TMDB path, kept for og:image when the backdrop is self-hosted. */
+  backdropTmdb?: string | null;
   runtime: number;
   genres: string[];
   certification: string;
@@ -44,21 +48,34 @@ export const movieBySlug = (slug: string) => MOVIES.find((m) => m.slug === slug)
 export const movieById = (id: number) => MOVIES.find((m) => m.id === id);
 export const GENRES = [...new Set(NOW.flatMap((m) => m.genres))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
 
-// ---------- Images: TMDB paths start with "/", local fixture keys don't ----------
+// ---------- Images: TMDB paths start with "/", self-hosted keys (public/img) don't ----------
 const TMDB_IMG = 'https://image.tmdb.org/t/p/';
 type Kind = 'poster' | 'thumb' | 'backdrop' | 'profile';
-const WIDTHS: Record<Kind, [number, number]> = { poster: [342, 500], thumb: [92, 154], backdrop: [780, 1280], profile: [185, 185] };
+const TMDB_W: Record<Kind, number[]> = { poster: [342, 500], thumb: [92, 154], backdrop: [780, 1280], profile: [185] };
+// Self-hosted WebP widths. Backdrops are the LCP image, written by scripts/fetch-movies.ts.
+const LOCAL_W: Record<Kind, number[]> = { poster: [342, 500], thumb: [342], backdrop: [640, 1024, 1600], profile: [185] };
 const DIR: Record<Kind, string> = { poster: 'img/posters/', thumb: 'img/posters/', backdrop: 'img/backdrops/', profile: 'img/profiles/' };
 
+const widths = (path: string, kind: Kind) => (path.startsWith('/') ? TMDB_W : LOCAL_W)[kind];
+const url = (path: string, kind: Kind, w: number) =>
+  path.startsWith('/') ? `${TMDB_IMG}w${w}${path}` : `${DIR[kind]}${path}-${w}.webp`;
+
+/** Smallest width, or the largest with `large`. */
 export function imgUrl(path: string, kind: Kind, large = false): string {
-  if (path.startsWith('/')) return `${TMDB_IMG}w${WIDTHS[kind][large ? 1 : 0]}${path}`;
-  const k = kind === 'thumb' ? 'poster' : kind; // fixture has no thumbnails, the small poster is close enough
-  return `${DIR[k]}${path}-${WIDTHS[k][large ? 1 : 0]}.webp`;
+  const ws = widths(path, kind);
+  return url(path, kind, large ? ws[ws.length - 1] : ws[0]);
 }
 export function imgSrcset(path: string, kind: Kind): string {
-  const k = path.startsWith('/') || kind !== 'thumb' ? kind : 'poster';
-  const [a, b] = WIDTHS[k];
-  return `${imgUrl(path, kind)} ${a}w, ${imgUrl(path, kind, true)} ${b}w`;
+  return widths(path, kind).map((w) => `${url(path, kind, w)} ${w}w`).join(', ');
+}
+/** Hero/LCP image of a film: src + srcset, or null. */
+export function backdropImg(m: Movie) {
+  return m.backdropPath ? { src: imgUrl(m.backdropPath, 'backdrop', true), set: imgSrcset(m.backdropPath, 'backdrop') } : null;
+}
+/** Landscape JPEG for social cards (og:image), only when TMDB has one. */
+export function shareImage(m: Movie) {
+  const p = m.backdropTmdb ?? (m.backdropPath?.startsWith('/') ? m.backdropPath : null);
+  return p ? `${TMDB_IMG}w1280${p}` : null;
 }
 
 // ---------- Cinemas (fictional units) ----------

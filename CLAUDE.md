@@ -17,7 +17,7 @@ Angular 21 standalone + zoneless + signals, SSG (`outputMode: "static"`), hidrat
 
 ```bash
 npm start            # seo + ng serve (dev)
-npm run movies       # busca filmes no TMDB (precisa TMDB_TOKEN no .env) e grava src/app/data/movies.json
+npm run movies       # busca filmes no TMDB (precisa TMDB_TOKEN no .env), grava src/app/data/movies.json e os backdrops WebP em public/img/backdrops
 npm run seo          # gera public/sitemap.xml e robots.txt a partir de movies.json
 npm run build        # seo + ng build (prerender de home, /filmes/:slug, /bomboniere, /cinemas)
 npm run build:pages  # build + copia dist pra docs/ (+ .nojekyll, 404.html, index de /meus-ingressos)
@@ -38,7 +38,8 @@ npm run build:pages  # build + copia dist pra docs/ (+ .nojekyll, 404.html, inde
 | `src/app/shared/pay.ts`, `ticket.ts` | Pix simulado (QR decorativo) e ingresso com código decorativo |
 | `src/app/shared/seo.ts` | Title, description, canonical, OG, JSON-LD por rota |
 | `src/app/shared/reveal.ts`, `trailer.ts`, `movie-card.ts` | Reveal-on-scroll, trailer lite (youtube-nocookie), card + selo `app-cert` |
-| `scripts/` | `fetch-movies.ts` (TMDB), `seo.ts` (sitemap), `pages.ts` (deploy), `og.html` (imagem de compartilhamento) |
+| `public/img/backdrops/` | Backdrops self-hosted (`<slug>-640/1024/1600.webp`), gerados pelo `fetch-movies.ts` com `sharp`. São a imagem LCP: não voltar a apontar o hero pro CDN do TMDB |
+| `scripts/` | `fetch-movies.ts` (TMDB + backdrops), `seo.ts` (sitemap), `pages.ts` (deploy), `og.html` (imagem de compartilhamento) |
 
 ## 4. Regras SEMPRE-ATIVAS
 
@@ -68,6 +69,7 @@ npm run build:pages  # build + copia dist pra docs/ (+ .nojekyll, 404.html, inde
 - **Python com caminho não-ASCII via argumento** chega corrompido. Rodar servidor/scripts de dentro da pasta, com caminho relativo.
 - **Print de página inteira mostra vazio** abaixo da dobra: é o `content-visibility: auto` dos cards + hidratação por viewport. Para validar, rolar e tirar print da viewport.
 - **Rotas client-only** (`/sessao/...`) respondem 404 via `404.html` no GitHub Pages, mas renderizam. A reserva de assento vive em memória (recarregar reinicia).
-- **Lighthouse local:** o Kaspersky injeta um script bloqueante; usar `--blocked-url-patterns="*kaspersky-labs.com*"`. Medir de verdade no site em https.
+- **Lighthouse local:** o Kaspersky intercepta o tráfego do Chrome (descomprime o HTML e injeta um script bloqueante), então os números saem piores que a realidade. Medir num Chromium aberto pelo Playwright com `--remote-debugging-port=9333`, rodando `npx lighthouse <url> --port=9333 --blocked-url-patterns="*kaspersky-labs.com*"`, servindo `docs/` com gzip sob `/Starplex/`. Comparar antes/depois sempre no mesmo ambiente, mediana de 3+ execuções.
+- **`sharp` segura o arquivo de entrada aberto** (EBUSY ao apagar no Windows): ler para `Buffer` e usar `sharp.cache(false)`.
 - **Nomes do elenco em outra escrita** (hangul, devanágari): o fetch troca pelo alias latino de `/person/{id}` ou descarta.
 - **Deploy do Pages falha com "try again later":** instabilidade do GitHub; `gh run rerun <id> --failed`.

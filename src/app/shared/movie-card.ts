@@ -10,7 +10,7 @@ import { movieFormats } from '../data/sessions';
   template: `
     @if (movie().posterPath; as p) {
       <img [src]="src(p)" [attr.srcset]="set(p)" [attr.sizes]="sizes()" [alt]="'Pôster de ' + movie().title"
-           width="342" height="513" [attr.loading]="eager() ? 'eager' : 'lazy'" [attr.fetchpriority]="eager() ? 'high' : null" decoding="async" />
+           width="342" height="513" [attr.loading]="eager() ? 'eager' : 'lazy'" [attr.fetchpriority]="eager() ? null : 'low'" decoding="async" />
     } @else {
       <div class="dotgrid grid h-full place-items-center p-4 text-center">
         <p class="h2 text-xl"><span class="grad">{{ movie().title }}</span></p>

@@ -2,8 +2,8 @@
 <section class="relative isolate overflow-hidden border-b border-line" aria-labelledby="hero-title">
   @for (m of [hero()]; track m.id) {
     @if (backdrop(m); as b) {
-      <img class="drift absolute inset-0 -z-20 h-full w-full object-cover object-[50%_30%] opacity-90" [src]="b.src" [attr.srcset]="b.set" sizes="100vw"
-           alt="" width="1280" height="720" fetchpriority="high" decoding="async" />
+      <img class="drift absolute inset-0 -z-20 h-full w-full object-cover object-[50%_30%] opacity-90" [src]="b.src" [attr.srcset]="b.set" sizes="(max-width: 640px) 50vw, 100vw"
+           alt="" width="1600" height="900" fetchpriority="high" />
     }
   }
   <div class="absolute inset-0 -z-10 bg-gradient-to-r from-paper via-paper/85 to-paper/10"></div>

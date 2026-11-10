@@ -1,7 +1,9 @@
 // Refreshes src/app/data/movies.json from TMDB (pt-BR, Brazil). Usage: put TMDB_TOKEN (v4 "API Read
 // Access Token") in .env, then `npm run movies && npm run build:pages`. The token is never printed or saved.
-import { existsSync } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
+import { readdir, unlink, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 
 if (existsSync('.env')) process.loadEnvFile('.env');
 const token = process.env['TMDB_TOKEN'];
@@ -102,6 +104,30 @@ for (const m of movies as Tmdb[]) {
   const d = m['director'] as Tmdb | null;
   m['director'] = d ? await latinName(d['id'], d['name']) : null;
 }
+
+// Self-host the backdrops: they are the LCP image of the home hero and of every film page. Same origin
+// (no extra TLS handshake to image.tmdb.org) and WebP at 640/1024/1600 instead of a 780/1280 JPEG.
+// The original TMDB path stays in `backdropTmdb` for og:image. If a download fails the film keeps the
+// TMDB path and the site falls back to TMDB URLs.
+const BACKDROPS = new URL('../public/img/backdrops/', import.meta.url);
+const BACKDROP_W = [640, 1024, 1600];
+sharp.cache(false);
+for (const m of movies as Tmdb[]) {
+  const path = m['backdropPath'] as string | null;
+  if (!path) continue;
+  const res = await fetch(`https://image.tmdb.org/t/p/original${path}`);
+  if (!res.ok) { console.warn(`movies: backdrop de ${m['slug']} falhou (${res.status}), usando TMDB`); continue; }
+  const img = sharp(Buffer.from(await res.arrayBuffer()));
+  for (const w of BACKDROP_W)
+    await img.clone().resize({ width: w, withoutEnlargement: true }).webp({ quality: 62 }).toFile(fileURLToPath(new URL(`${m['slug']}-${w}.webp`, BACKDROPS)));
+  m['backdropTmdb'] = path;
+  m['backdropPath'] = m['slug'];
+}
+// Drop backdrops of films that left the lineup (the offline fixture's stay).
+const fixture = JSON.parse(readFileSync(new URL('../src/app/data/movies.fixture.json', import.meta.url), 'utf8'));
+const keep = new Set([...movies, ...fixture.movies].map((m: Tmdb) => m['slug']));
+for (const f of await readdir(BACKDROPS))
+  if (!keep.has(f.replace(/-\d+\.webp$/, ''))) await unlink(fileURLToPath(new URL(f, BACKDROPS)));
 
 const file = new URL('../src/app/data/movies.json', import.meta.url);
 await writeFile(file, JSON.stringify({ source: 'tmdb', updatedAt: today, movies }, null, 2) + '\n');

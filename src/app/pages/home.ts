@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, signal, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
-  CINEMAS, CITY, FORMATS, GENRES, NOW, SNACKS, SOON, brl, imgSrcset, imgUrl, runtimeLabel, type Format, type Movie,
+  CINEMAS, CITY, FORMATS, GENRES, NOW, SNACKS, SOON, backdropImg, brl, runtimeLabel, type Format, type Movie,
 } from '../data/catalog';
 import { movieCinemas, movieFormats } from '../data/sessions';
 import { Icon } from '../shared/icon';
@@ -63,9 +63,7 @@ export class Home {
     });
   }
 
-  protected backdrop(m: Movie) {
-    return m.backdropPath ? { src: imgUrl(m.backdropPath, 'backdrop', true), set: imgSrcset(m.backdropPath, 'backdrop') } : null;
-  }
+  protected backdrop = backdropImg;
 
   protected openTrailer(m: Movie) {
     this.trailer.set(m);

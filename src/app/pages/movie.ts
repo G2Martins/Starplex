@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, afterNextRender, computed, effect, 
 import { RouterLink } from '@angular/router';
 import {
   certLabel, certShort,
-  CINEMAS, DATA_SOURCE, DOW, FORMATS, MONTHS, NOW, SITE_URL, dateKey, imgSrcset, imgUrl, movieBySlug, parseKey, prettyDate, runtimeLabel,
+  CINEMAS, DATA_SOURCE, DOW, FORMATS, MONTHS, NOW, SITE_URL, backdropImg, dateKey, imgUrl, movieBySlug, parseKey, prettyDate, runtimeLabel, shareImage,
   type Format, type Movie,
 } from '../data/catalog';
 import { movieFormats, nextDays, sessionsFor, type Session } from '../data/sessions';
@@ -74,7 +74,7 @@ export class MoviePage {
         title: `${m.title}: sessões e ingressos | Starplex`,
         description: clip(`${m.title} (${certShort(m.certification).toLowerCase()}, ${runtimeLabel(m.runtime)}). ${m.overview}`),
         path: `/filmes/${m.slug}/`,
-        image: m.backdropPath?.startsWith('/') ? imgUrl(m.backdropPath, 'backdrop', true) : OG_IMAGE,
+        image: shareImage(m) ?? OG_IMAGE,
         imageAlt: `${m.title} no Starplex`,
         type: 'video.movie',
         jsonLd: [movieNode(m), breadcrumbs([{ name: 'Starplex', path: '/' }, { name: m.title, path: `/filmes/${m.slug}/` }])],
@@ -90,9 +90,7 @@ export class MoviePage {
     });
   }
 
-  protected backdrop(m: Movie) {
-    return m.backdropPath ? { src: imgUrl(m.backdropPath, 'backdrop', true), set: imgSrcset(m.backdropPath, 'backdrop') } : null;
-  }
+  protected backdrop = backdropImg;
   protected profile = (p: string) => imgUrl(p, 'profile');
   protected initials = (name: string) => name.split(' ').filter(Boolean).slice(0, 2).map((w) => w[0]).join('');
   protected dayLabel(k: string, i: number) {

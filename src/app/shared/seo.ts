@@ -25,7 +25,7 @@ export function websiteNode() {
     name: 'Starplex',
     description: 'Cinema fictício em Brasília: projeto de portfólio com filmes em cartaz, sessões, mapa de assentos e bomboniere. Compras simuladas.',
     inLanguage: 'pt-BR',
-    creator: { '@type': 'Person', name: AUTHOR, url: PORTFOLIO_URL },
+    creator: { '@type': 'Person', '@id': `${PORTFOLIO_URL}#person`, name: AUTHOR, url: PORTFOLIO_URL },
   };
 }
 

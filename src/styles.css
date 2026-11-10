@@ -276,7 +276,8 @@
 .materialize { animation: materialize 800ms var(--ease-out-expo) both; }
 .bar-grow { transform-origin: left; animation: bar 1200ms var(--ease-out-expo) both; }
 .live-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
-.drift { animation: drift 24s ease-in-out infinite alternate; }
+/* Desktop only: on phones the hero image is the LCP element and the loop is pure main-thread cost. */
+@media (min-width: 1024px) { .drift { animation: drift 24s ease-in-out infinite alternate; } }
 .marquee { animation: marquee 70s linear infinite; }
 .spin { animation: spin 900ms linear infinite; }
 

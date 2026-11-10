@@ -34,7 +34,9 @@ Detalhes que valem olhar:
   nas páginas de filme, `sitemap.xml` e `robots.txt` gerados a partir dos dados. Sem `ScreeningEvent`/`Offer`,
   porque as sessões não são reais.
 - **Performance:** páginas de catálogo pré-renderizadas, hidratação incremental das seções abaixo da dobra,
-  `content-visibility` nos cartazes, fonte Geist com preload, imagens com dimensões fixas (CLS 0).
+  `content-visibility` nos cartazes, fonte Geist com preload, imagens com dimensões fixas (CLS 0). A imagem
+  de fundo de cada filme (o LCP da home e das páginas de filme) é servida do próprio domínio em WebP
+  640/1024/1600, sem handshake extra com o CDN do TMDB.
 
 ## Stack
 
@@ -66,7 +68,10 @@ npm run movies && npm run build:pages
 ```
 
 O script pega ~16 filmes em cartaz e ~8 próximas estreias (pt-BR, região BR), com classificação indicativa
-brasileira, elenco, diretor e trailer. Sem token, ou se a API falhar, o `movies.json` atual é mantido.
+brasileira, elenco, diretor e trailer. Também baixa o backdrop original de cada filme e grava WebP em
+`public/img/backdrops/<slug>-{640,1024,1600}.webp` (com `sharp`), apagando os de filmes que saíram de cartaz.
+Pôsteres, fotos do elenco e `og:image` continuam vindo do TMDB. Sem token, ou se a API falhar, o
+`movies.json` atual é mantido; se só o download de um backdrop falhar, aquele filme usa a URL do TMDB.
 Para voltar ao conjunto offline de exemplo (cartazes locais em `public/img`):
 `cp src/app/data/movies.fixture.json src/app/data/movies.json`.
 
